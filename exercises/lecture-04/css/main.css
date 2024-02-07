@@ -19,12 +19,12 @@ section > p {
    }
    h2:first-of-type {
     color: indigo; }
-p.first a{
+ 
+p.first a {
     color: green;
-} 
-p.first .first a
-{color: green;}  
-div + p {
+}
+
+div ~ p {
     color: salmon;
   }
   .translucent-box {
@@ -32,10 +32,16 @@ div + p {
     width: 100px; 
     height: 100px;
   }
- html{
-    font-size: 100%;
- }
- body{font-size: 40%;}
- h1{font-size: 140%;}
+  html {
+    font-size: 100%; 
+}
+
+body {
+    font-size: 1.4rem;} 
+
+h1 {
+    font-size: 2.4rem; 
+}
+
   
   
