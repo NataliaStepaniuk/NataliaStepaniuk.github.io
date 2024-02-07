@@ -23,6 +23,7 @@ section > p {
 p.first a {
     color: green;
 }
+p .first a {color: green;}
 
 div ~ p {
     color: salmon;
