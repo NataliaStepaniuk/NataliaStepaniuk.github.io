@@ -1,0 +1,28 @@
+/*footer*/
+footer {
+    --footer-text-color: #fff;
+    --footer-bg-color: #000;
+  }
+.page-footer {
+    color: #eee;
+    background-color: #555;
+}
+
+.page-footer ul {
+    list-style: none;
+}
+
+.page-footer ul > li > a {
+    color: #ddd;
+}
+
+.footer-ligal {
+    background-color: #000;   
+}
+.footer-social{
+    color: #eee;
+    background-color: #333;
+}
+.footer-ligal > ul > li > a {
+    color: #fff;
+}
