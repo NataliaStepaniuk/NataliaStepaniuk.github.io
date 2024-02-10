@@ -46,29 +46,16 @@ ul li:first-child span {
 
 /*Завдання 6*/
 
-ul li:last-child {
-  color: orange;
-}
-
-ul li span:last-of-type  {
+ul:last-of-type {
   color: orange;
 }
 
 /*Завдання 7*/
-ul li:not(.first-item) {
+li:not(.first-item) {
   color: orange;
 }
-ul li {
-  color: black;
-  background-color: yellow;
-}
 
-ul li.first-item {
-  color:black;
-  background-color: yellow;
-}
-
-ul li:last-child {
+li:not(.first-item):not(:last-of-type) {
   color: black;
   background-color: yellow;
 }
