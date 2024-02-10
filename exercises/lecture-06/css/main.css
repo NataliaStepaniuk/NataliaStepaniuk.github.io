@@ -46,7 +46,7 @@ ul li:first-child span {
 
 /*Завдання 6*/
 
-ul:last-of-type {
+ul :last-of-type {
   color: orange;
 }
 
