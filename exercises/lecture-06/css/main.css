@@ -50,19 +50,21 @@ ul li:last-child {
   color: orange;
 }
 
-ul li:last-child span:last-child {
+ul li span:last-of-type  {
   color: orange;
 }
 
 /*Завдання 7*/
-
+ul li:not(.first-item) {
+  color: orange;
+}
 ul li {
   color: black;
   background-color: yellow;
 }
 
 ul li.first-item {
-  color: orange;
+  color:black;
   background-color: yellow;
 }
 
