@@ -1,47 +1,41 @@
 /*catalog*/
-main .container h2 > span {
-    color: var(--anchor-active-color);
-}  
-
 main .container h2 {
-   text-transform: uppercase;
-} 
-.product-container{
-    > .product {
-        > .icons {
-           >  a{
-                background-color: #fff;
-                color: var(--anchor-color);
-            }
-            >  a:hover{
-                background-color: var(--anchor-active-color);
-                color: #fff;
-            }
-        }
-        /* > .image {
+  text-transform: uppercase;
+}
 
-        } */
-        > .content {
-            /* > h3 {
+main .container h2 > span {
+  color: var(--anchor-active-color);
+}
 
-            } */
-            > .price{
-                font-weight: 600;
-                color: var(--anchor-active-color);
-            }
-            > .price::before {
-                color: var(--anchor-active-color);
-                content: var(--currency-symbol);
-            }
-        }
-    }
+.product-container > .product > .icons > a {
+  background-color: #fff;
+  color: var(--anchor-color);
+}
+
+.product-container > .product > .icons > a:hover {
+  background-color: var(--anchor-active-color);
+  color: #fff;
+}
+
+.product-container > .product > .content > .price {
+  font-weight: 600;
+  color: var(--anchor-active-color);
+}
+
+.product-container > .product > .content > .price::before {
+  color: var(--anchor-active-color);
+  content: var(--currency-symbol);
 }
 
 ul.categories a:hover {
-    color: var(--anchor-active-color);
-    text-decoration: underline;
+  color: var(--anchor-active-color);
+  text-decoration: underline;
 }
 
 ul.categories li:nth-child(even) {
-    background-color: lightgrey;
+  background-color: lightgrey;
+}
+
+.text-shadow-example {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }

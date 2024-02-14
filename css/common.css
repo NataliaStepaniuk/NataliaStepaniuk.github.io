@@ -6,28 +6,26 @@
 * {
   margin: 0;
 }
+
 :root {
   --primary-text-color: #000;
   --primary-bg-color: #fff;
   --primary-font-family: "Roboto", sans-serif;
   --primary-font-size: 0.875rem;
 
-  --main-color: #4B0082;
+  --main-color: #4b0082;
   --anchor-color: #333;
   --anchor-active-color: salmon;
-  --currency-symbol: "\20B4"; /*unicod*/
+  --currency-symbol: "\20B4"; /*unicode*/
 }
 
-
 body {
-  color: var(--primary-text-color) ;
+  color: var(--primary-text-color);
   background: var(--primary-bg-color);
   font-family: var(--primary-font-family);
   font-size: var(--primary-font-size);
 
-  color: var(--main-color);
-  font-family: 'Poppins', sans-serif;
-  font-size: .875rem / 1.3;
+  line-height: 1.3; /* or any other appropriate line-height */
 }
 
 h1,
@@ -35,14 +33,20 @@ h2,
 h3 {
   font-weight: 700;
 }
+
 h1 {
-  font-size: 1.45rem;
+  font-size: calc(1.3rem + 1.1vw);
 }
 
 h2 {
-  font-size: 1.3;
+  font-size: calc(1.2rem + 0.8vw);
 }
-.list-unstyled{
+
+h3 {
+  color: var(--primary-bg-color);
+}
+
+.list-unstyled {
   list-style: none;
 }
 
@@ -56,6 +60,6 @@ footer {
   --footer-bg-color: #000;
 }
 
-.footer-social ul li{
+.footer-social ul li {
   padding: 1em 1em;
 }
