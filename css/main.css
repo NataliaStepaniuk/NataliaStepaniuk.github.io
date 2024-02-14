@@ -1,13 +1,11 @@
 /*main.css*/
-@charset "utf-8";
-
 @import url(/css/common.css);
 @import url(/css/nav.css);
 @import url(/css/hero.css);
 @import url(/css/catalog.css);
 @import url(/css/footer.css);
-@import url(/css/fonts.css);
-/* @import url(/css/app.css); */
+@import url(/css/app.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css);
 
 .text-uppercase {
     text-transform: uppercase;
@@ -30,4 +28,6 @@ ul.categories li a {
 ul.categories li a:hover {
     background-color: lightgray;
 }
-
+/*#services h3 {
+    color: rgb(18, 57, 72);
+}
