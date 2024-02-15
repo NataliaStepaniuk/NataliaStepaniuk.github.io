@@ -62,7 +62,7 @@
         padding: 20px;
         background: yellow;
       }
-      /* Ширина  елемента .div 200px*/
+      /* Ширина контенту елемента .div 200px - (20px + 20px + 8px + 8px) = 144px*/
 
       /*Завдання 7*/
       .fifth-box {
@@ -80,14 +80,10 @@
         background-clip: content-box;
       }
       /*Завдання 8*/
-      h1 {
-        display: inline-block;
-        white-space: normal;
-      }
-
-      h1 span {
-        display: block;
-      }
+      h1{
+            display: inline-block;
+            inline-size: min-content;
+        }
     </style>
   </head>
   <body>
