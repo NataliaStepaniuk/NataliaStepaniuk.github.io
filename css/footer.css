@@ -26,21 +26,25 @@
                 font-family: 'Font Awesome 5 Free';
                 margin-right: 3px;
             }
-            /* > .footer-title {
-                
-            } */
+           
         }
     }
-    .footer-title{
+    .h3.footer-title{
         font-size: 1.1rem;
         color: var(--footer-light-color);
     }
 
     > .footer-social{
+        text-align: center;
         background-color: var(--footer-social-background-color);
-        > .footer-social-list > li > a > i{
-            font-size: 1.25rem;
-            color: var(--footer-a-color);
+        > .footer-social-list {
+            > li{
+                display: inline-block;
+                > a > i{
+                font-size: 1.25rem;
+                color: var(--footer-light-color);
+            } 
+        }
         }
         > .footer-social-list > li > a:hover > i{
             color: var(--footer-active-color);
@@ -76,7 +80,7 @@
     background-color: #000;   
 }
 .footer-social{
-    color: #eee;
+    color:blueviolet;
     background-color: #333;
 }
 .footer-ligal > ul > li > a {
