@@ -2,6 +2,7 @@
 @import url(/css/common.css);
 @import url(/css/nav.css);
 @import url(/css/hero.css);
+@import url(/css/breadcrumb.css);
 @import url(/css/catalog.css);
 @import url(/css/footer.css);
 @import url(/css/app.css);
@@ -28,6 +29,6 @@ ul.categories li a {
 ul.categories li a:hover {
     background-color: lightgray;
 }
-/*#services h3 {
+#services h3 {
     color: rgb(18, 57, 72);
 }
