@@ -10,12 +10,16 @@
     justify-content: space-between;
     align-items: center;
     padding:1.5rem 7% ;
+
+    
     
 /* brand */
     > .brand {
         color: var(--anchor-active-color);
-        font-weight: 600;
-        font-size: 1.1rem;
+        font-weight: 400 rem;
+        font-size: 1.3em;
+      
+       
     }
     > .navbar {
         > a {
@@ -41,3 +45,9 @@
         }
     }
 }
+
+.page-header a {
+    font-size: 1.5em; 
+    font-weight: bold; 
+  }
+  

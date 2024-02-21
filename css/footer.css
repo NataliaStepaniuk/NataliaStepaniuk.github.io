@@ -7,17 +7,17 @@
   --footer-light-color: #fff;
   --footer-a-font-size: 0.85rem;
   background-color: var(--footer-background-color);
-
+  
   > .footer-main {
-    background-color: var(--footer-background-color);
-    color: var(--footer-light-color);
+    background-color: var(--footer-beckground-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 1.25rem 1.875rem;
-
     > .footer-main-item {
-      > ul > li > a {
+      > ul > li 
+      
+      > a {
         color: var(--footer-a-color);
         font-size: var(--footer-a-font-size);
       }
@@ -31,21 +31,23 @@
         font-family: "Font Awesome 5 Free";
         margin-right: 3px;
       }
+      > .footer-title {
+        font-size: 1.1rem;
+        text-align: center;
+        color: var(--footer-light-color);
+        
+      }
     }
   }
 
-  .footer-title {
-    font-size: 1.1rem;
-    text-align: center;
-
-    color: var(--footer-light-color);
-  }
-
+  
   > .footer-social {
-    background-color: var(--footer-social-background-color);
+   
     text-align: center;
     display: flex;
     justify-content: center;
+    color: rgb(226, 43, 113);
+    background-color: #333;
     > .footer-social-list {
       > li {
         display: inline-block;
@@ -61,7 +63,8 @@
     }
   }
   > .footer-ligal {
-    background-color: var(--footer-ligal-background-color);
+   background-color: var(--footer-ligal-background-color);
+    background-color: #000;
 
     > ul.footer-ligal-list {
       width: 100%;
@@ -73,6 +76,7 @@
       }
       > li > a {
         color: var(--footer-light-color);
+       
       }
       > li > a:hover {
         color: var(--footer-a-color);
@@ -84,21 +88,14 @@
   }
 }
 
+
 .page-footer ul {
   list-style: none;
 }
 
 .page-footer ul > li > a {
-  color: #ddd;
+  color: #f0e3e3;
+
 }
 
-.footer-ligal {
-  background-color: #000;
-}
-.footer-social {
-  color: blueviolet;
-  background-color: #333;
-}
-.footer-ligal > ul > li > a {
-  color: #fff;
-}
+
