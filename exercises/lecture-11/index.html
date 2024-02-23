@@ -10,10 +10,12 @@
     <style>
       main div:nth-of-type(1) {
         background-color: #c9316b;
+        grid-template-columns: 15% 60% 25%;
       }
       main div:nth-of-type(2) {
         background-color: #c9319e;
         grid-column: 2;
+        grid-template-rows: 95px 1fr 70px;
       }
       main div:nth-of-type(3) {
         background-color: #c231c9;
@@ -68,18 +70,13 @@
       main {
         margin: 2vw 0;
         display: grid;
-        grid-template-columns: 15% 60% 25%;
-        grid-template-rows: 95px 1fr 70px;
         gap: 1em;
       }
 
       main div {
         color: #fff;
         padding: 5vh;
-        grid-template-columns: repeat(2, 1fr);
       }
-     
-     
     </style>
   </head>
   <body>
