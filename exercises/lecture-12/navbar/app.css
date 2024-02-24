@@ -76,19 +76,23 @@ nav {
   margin-left: 1em;
 }
 @media  (max-width: 800px) {
+  
   header {
     
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr auto 1fr;;
+    display: grid;
+  grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr auto 1fr;
+  
   }
   
   nav {
+    display: flex; 
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .navbar,
   .toolbar {
-   display: flex;
-   justify-content: space-between;
+    margin-top: 0;
    
   }
   
