@@ -9,23 +9,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1.5rem 7% ;
-
-    
-    
-/* brand */
+    padding: 1.5rem 10%;
+    /* brand */
     > .brand {
-        color: var(--anchor-active-color);
-        font-weight: 400 rem;
-        font-size: 1.3em;
-      
-       
+        color: var(--primary-text-color);
+        font-weight: 600;
+        font-size: 1.5rem;
+        
     }
     > .navbar {
         > a {
             font-size: 1.1rem;
-            margin-right:.5rem ;
             color: var(--anchor-color);
+            margin: 30px;
         }
         > a:hover {
             color: var(--anchor-active-color);
@@ -35,19 +31,14 @@
     > .toolbar {
         > a {
             font-size: 1.1rem;
-            color: var(--anchor-color);
+            color: var(--main-color);
+           
         }
         > a:hover {
             color: var(--anchor-active-color);
         }
         > a:active {
-            color: blueviolet;
+            color: rgb(129, 47, 117);
         }
     }
 }
-
-.page-header a {
-    font-size: 1.5em; 
-    font-weight: bold; 
-  }
-  

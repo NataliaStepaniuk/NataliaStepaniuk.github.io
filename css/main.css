@@ -4,6 +4,8 @@
 @import url(/css/hero.css);
 @import url(/css/breadcrumb.css);
 @import url(/css/catalog.css);
+@import url(/css/blog.css);
+@import url(/css/contact.css);
 @import url(/css/footer.css);
 @import url(/css/app.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css);
@@ -21,7 +23,7 @@
 }
 
 ul.categories li a {
-    color: indigo;
+    color: rgb(18, 3, 29);
     text-decoration: none;
     font-size: 1.2rem;
 }
@@ -29,6 +31,4 @@ ul.categories li a {
 ul.categories li a:hover {
     background-color: lightgray;
 }
-#services h3 {
-    color: rgb(18, 57, 72);
-}
+

@@ -46,7 +46,6 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    color: rgb(226, 43, 113);
     background-color: #333;
     > .footer-social-list {
       > li {
@@ -82,7 +81,8 @@
         color: var(--footer-a-color);
       }
       > li:nth-last-child(2) {
-        flex: 1;
+       flex: 1;
+        margin-right: 1rem;
       }
     }
   }
@@ -94,8 +94,9 @@
 }
 
 .page-footer ul > li > a {
-  color: #f0e3e3;
+  color: #221212;
 
 }
+
 
 
