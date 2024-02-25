@@ -77,28 +77,45 @@ nav {
 }
 
 @media (max-width: 800px) {
- nav{
-   flex-direction: row;
-   justify-content: center;
-  align-items: center;}
+ 
+header {
+  display: flex;
+  flex-direction: column;
+}
 
-  .navbar,
-  .toolbar {
-    margin-top: 0;
-  }
+nav {
+  
+  justify-content: space-between;
+  align-items: center;
+ flex-direction: column;
+  display: flex;
+}
+.navbar, .toolbar{
+  display: flex;
+ 
+  margin-top: 2rem;
+}
 
-  .logo,
-  .toolbar,
-  .navbar {
-    grid-column: auto; 
-  }
+.logo {
+  grid-column: 2 / 3;
+}
 
-  .toolbar a {
-    margin-left: 0.5em;
-  }
+.toolbar {
 
-  .navbar a {
-    margin-left: 1em;
-  }
+  grid-column: 5 / 6;
+}
+
+.navbar {
+
+  grid-column: 3 / 4;
+}
+
+.toolbar a{
+  margin-left: .5em;
+}
+
+.navbar a {
+  margin-left: 1em;
+}
 }
 
