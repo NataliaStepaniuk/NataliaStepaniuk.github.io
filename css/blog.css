@@ -1,12 +1,14 @@
-#blog.conteiner {
+#blog .container {
     display: grid;
-    gap: 1em;
-    grid-template-columns:auto 15rem;
+    gap:1em;
+    grid-template-columns: auto 15rem;
 }
-.blog-main{
+
+.blog-main {
     height: 30ch;
     border: 1px dotted red;
 }
-.blog-sidebar{
-    border: 1px dotted gold;
+
+.blog-sidebar {
+    border: 1px dotted goldenrod;
 }

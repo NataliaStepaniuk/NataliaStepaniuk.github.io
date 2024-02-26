@@ -11,14 +11,14 @@
 }
 
 :root {
-  --primary-text-color: #501717;
-  --primary-bg-color: #f0cece;
+  --primary-text-color: #44101d;
+  --primary-bg-color: #e6dddd;
   --primary-font-family: "Roboto", sans-serif;
   --primary-font-size: 0.875rem;
 
-  --main-color: #4b0082;
-  --anchor-color:#442035;
-  --anchor-active-color: rgba(226, 96, 159, 0.884);
+  --main-color: #4e1f44;
+  --anchor-color:#361328;
+  --anchor-active-color: rgba(204, 83, 184, 0.884);
   --currency-symbol: "\20B4"; /*unicode*/
 }
 
@@ -59,6 +59,15 @@ a {
 }
 ul {
   list-style: none;
+}
+ul.categories li a {
+  color: rgb(18, 3, 29);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+ul.categories li a:hover {
+  background-color: lightgray;
 }
 
 
