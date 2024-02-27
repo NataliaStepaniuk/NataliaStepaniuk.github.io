@@ -35,7 +35,8 @@ body {
   background-color: white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-content: start;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
   gap: 0.8em;
 }
 
