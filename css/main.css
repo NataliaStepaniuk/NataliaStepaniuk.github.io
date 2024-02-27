@@ -1,14 +1,16 @@
 /*main.css*/
 @import url(/css/common.css);
+@import url(/css/app.css);
 @import url(/css/nav.css);
 @import url(/css/hero.css);
 @import url(/css/breadcrumb.css);
 @import url(/css/catalog.css);
-@import url(/css/blog.css);
 @import url(/css/contact.css);
+@import url(/css/blog.css);
+@import url(/css/cart.css);
 @import url(/css/footer.css);
-@import url(/css/app.css);
-/*@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css);*/
+
+
 
 
 
