@@ -2,103 +2,101 @@
 main .container h2 > span {
   color: var(--anchor-active-color);
   margin-left: 1rem;
-}  
+}
 
 main .container h2 {
- text-transform: uppercase;
- 
+  text-transform: uppercase;
+}
+.bg-sale {
+  background-color: rgb(226, 169, 169);
+  color: rgb(44, 9, 9);
+}
 
-}  
-.bg-sale{
-    background-color: red;
-    color: white;
-  }
-
-.product-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-    gap: 0.5rem;
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 0.5rem;
   & .product {
-      width: 12.5rem;
-      overflow: hidden;
-      position: relative;
-      > .icons {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          z-index: -1;
-         >  a{
-              background-color: #fff;
-              color: var(--anchor-color);
-              display: block;
-              margin-top: .5rem;
-              width: 1.5rem;
-              height: 1.5rem;
-              line-height: 1.5rem;
-              text-align: center;
-          }
+    width: 12.5rem;
+    overflow: hidden;
+    position: relative;
+    > .icons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: -1;
+      > a {
+        background-color: #fff;
+        color: var(--anchor-color);
+        display: block;
+        margin-top: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+      }
 
-          >  a:hover{
-              background-color: var(--anchor-active-color);
-              color: #fff;
-          }
+      > a:hover {
+        background-color: var(--anchor-active-color);
+        color: #fff;
       }
-      > .image {
-          object-fit: cover;
-          > .badge{
-              display: inline-block;
-              text-align: center;
-              vertical-align: baseline;
-              font-size: .75rem;
-              padding: .25rem .45rem;
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 10;
-          }
+    }
+    > .image {
+      object-fit: cover;
+      > .badge {
+        display: inline-block;
+        text-align: center;
+        vertical-align: baseline;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.45rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
       }
-      > .content {
-          padding: .5rem;
-          > h3 {
-              padding-bottom: .5rem;
-              text-align: center;
-              font-size: 1rem;
-              position: absolute;
-              bottom: -3rem;
-              left: 0;
-              right: 0;
-              z-index: 10;
-          }
-          > .price{
-              font-weight: 600;
-              color: var(--anchor-active-color);
-          }
-          > .price::before {
-              color: var(--anchor-active-color);
-              content: var(--currency-symbol);
-          }
-          > .price:nth-of-type(1){
-              float: left;
-              text-decoration: line-through;
-          }
-          > .price:nth-of-type(2){
-              float: right;
-          }
+    }
+    > .content {
+      padding: 0.5rem;
+      > h3 {
+        padding-bottom: 0.5rem;
+        text-align: center;
+        font-size: 1rem;
+        position: absolute;
+        bottom: -3rem;
+        left: 0;
+        right: 0;
+        z-index: 10;
       }
+      > .price {
+        font-weight: 600;
+        color: var(--anchor-active-color);
+      }
+      > .price::before {
+        color: var(--anchor-active-color);
+        content: var(--currency-symbol);
+      }
+      > .price:nth-of-type(1) {
+        float: left;
+        text-decoration: line-through;
+      }
+      > .price:nth-of-type(2) {
+        float: right;
+      }
+    }
   }
-  > .product:hover h3{
-      bottom: 1.5rem;
+  > .product:hover h3 {
+    bottom: 1.5rem;
   }
-  > .product:hover .icons{
-      z-index: 10;
+  > .product:hover .icons {
+    z-index: 10;
   }
 }
 @media (min-width: 35rem) {
-    #catalog {
-        display: grid;
-        gap:1em;
-        grid-template-columns: 15rem auto;
-    }
+  #catalog {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 15rem auto;
+  }
 }
 
 ul.categories a:hover {
@@ -107,6 +105,5 @@ ul.categories a:hover {
 }
 
 ul.categories li:nth-child(even) {
-  background-color: lightgrey;
+  background-color: rgb(194, 107, 107);
 }
-
