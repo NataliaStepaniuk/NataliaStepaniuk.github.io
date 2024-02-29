@@ -17,8 +17,8 @@
   --primary-font-size: 0.875rem;
 
   --main-color: #4e1f44;
-  --anchor-color:#361328;
-  --anchor-active-color: rgba(204, 83, 184, 0.884);
+  --anchor-color:#52193b;
+  --anchor-active-color: rgba(68, 3, 43, 0.884);
   --currency-symbol: "\20B4"; /*unicode*/
 }
 
