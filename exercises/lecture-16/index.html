@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>Hello, javascript!</h1>
+    <!--Завдання 1-->
+    <script>
+      const message1 = "Hello";
+      const message2 = "JavaScript!";
+      alert(message1 + " " + message2 + "!");
+    </script>
+    <!--Завдання 2-->
+    <script>
+      "use strict";
+
+      let message;
+      message = "hello";
+      message = 123456;
+
+      console.log(message);
+    </script>
+    <!--Завдання 3-->
+    <script>
+      let x = prompt("Введіть значення для x:");
+      let y = prompt("Введіть значення для y:");
+      let sum = parseFloat(x) + parseFloat(y);
+      alert("Сума x i y дорівнює: " + sum);
+    </script>
+
+    <!--Завдання 4-->
+    <script>
+      "use strict";
+      // Використання BigInt
+
+      let a = 9007199254740991;
+      let b = 9007199254740991n;
+
+      // Конвертація числа a в BigInt перед додаванням
+      a = BigInt(a);
+
+      console.log(a + b); // Виведе правильний результат
+    </script>
+    <!--Завдання 5-->
+    <script>
+      "use strict";
+
+      let apples = "2";
+      let oranges = "3";
+
+      // Перетворення рядкових значень на числа та додавання
+      let result = Number(apples) + Number(oranges);
+
+      alert(result); // 5
+    </script>
+
+    <!--Завдання 6-->
+    <script>
+      "use strict";
+
+      {
+        let a = 1,
+          b = 1;
+        let c = ++a; // 2
+        let d = b++; // 1
+      }
+    </script>
+    <!--Завдання 7-->
+    <script>
+      "use strict";
+
+      {
+        let a = 2;
+        let x = 1 + (a *= 2);
+        // a = 4, x = 5
+      }
+    </script>
+
+    <!--Завдання 8-->
+    <script>
+      "use strict";
+
+      "" + 1 + 0; //10
+      "" - 1 + 0; //-1
+      true + false; //1
+      6 / "3"; //2
+      "2" * "3"; //6
+      4 + 5 + "px"; //9px
+      "$" + 4 + 5; //$45
+      "4" - 2; //2
+      "4px" - 2; //NaN
+      "  -9  " + 5; // -9 5
+      "  -9  " - 5; //-14
+      null + 1; //1
+      undefined + 1; //NaN
+      NaN + 1; //NaN
+    </script>
+
+    <!--Завдання 9-->
+    <script>
+      "use strict";
+
+      let n = 2;
+      n += 5; // Те саме, що і n = n + 5;
+      n *= 2; // Те саме, що і n = n * 2;
+
+      console.log(n);
+    </script>
+    <!--Завдання 10-->
+    <script>
+      let n1 = "   123   ";
+      let n2 = "123z";
+      let n3 = true;
+      let n4 = false;
+
+      // Перетворення рядкових значень на числа
+      let number1 = parseInt(n1.trim(), 10);
+      let number2 = parseInt(n2, 10);
+
+      // Перетворення логічних значень на числа
+      let number3 = Number(n3);
+      let number4 = Number(n4);
+
+      console.log(number1, number2, number3, number4);
+    </script>
+  </body>
+</html>
