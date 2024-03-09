@@ -36,14 +36,17 @@
         x ||= y; // x залишається 3
         x || (y = z); //x залишається 3
         x &&= y; //x стає 4
-        x && (y = z); // x стає 4
-        x ??= y; // x залишається 3
-        x ?? (y = z); // x залишається 3
+        x && (y = z); // x стає 4 а y стає 5
+        x ??= y; // x залишається 4
+        x ?? (y = z); // x залишається 4
       }
     </script>
     <!--Завдання 3-->
     <script>
-      const secretNumber = 3;
+      const min = 1;
+      const max = 10000;
+
+      const secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;;
 
       const guess = prompt("Введіть число:");
 
@@ -55,31 +58,9 @@
         alert("Число занадто маленьке.Спробуйте ще раз.");
       }
     </script>
-    <!-- <script>
-    
-    const secretNumber = 3;
+   
 
-    const guess = parseInt(prompt("Введіть число:"));
-    switch (guess) {
-      case secretNumber:
-        alert("Вітаю, ви вгадали!");
-        break;
-      case secretNumber + 1:
-      case secretNumber + 2:
-      case secretNumber + 3:
-        alert("Число занадто велике.");
-        break;
-      case secretNumber - 1:
-      case secretNumber - 2:
-      case secretNumber - 3:
-        alert("Число занадто маленьке.");
-        break;
-      default:
-        alert("Введіть число в діапазоні від " + (secretNumber - 3) + " до " + (secretNumber + 3));
-    }
-  </script>-->
-
-    <!--Завдання 4-->
+    <!--Завдання 4.1-->
     <script>
       const day = prompt("Введіть назву дня тижня:");
 
@@ -96,8 +77,9 @@
           alert("Звичайний день");
       }
     </script>
-    <!--<script>
-    
+    <!--Завдання 4.2-->
+    <script>
+    {
     const day = prompt("Введіть день тижня:");
 
     if (day === "Понеділок" || day === "Monday") {
@@ -107,9 +89,10 @@
     } else {
       alert("Звичайний день");
     }
-  </script>-->
+  }
+  </script>
 
-    <!--Завдання 5-->
+    <!--Завдання 5.1-->
     <script>
       const score = parseInt(prompt("Введіть кількість балів:"));
 
@@ -128,29 +111,40 @@
 
       alert(`Оцінка: ${grade}`);
     </script>
-    <!--<script>  
+    <!--Завдання 5.2-->
+   <!--<script>  
    
-    const score = parseInt(prompt("Введіть кількість балів:"));
-
-    const grade = score < 50 ? "F" 
-     score < 70 ? "D": score < 80 ? "C": score < 90 ? "B" : "A";
-
-    alert(`Оцінка: ${grade}`);
-  </script>-->
+   
+    const score = parseInt(prompt("Введіть результат іспиту: "));
+    const grade = score < 50 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A";
+    console.log(`Оцінка: ${grade}`);
+   -->
+  </script>
 
     <!--Завдання 6-->
     <script>
       let firstName = null;
       let lastName = undefined;
-      let username;
-
-      if (firstName === null && lastName === undefined) {
-        username = "Guest";
-      } else {
-        username = firstName || lastName;
-      }
+      let username = firstName || lastName || "Guest";
 
       console.log(username); // "Guest"
+
     </script>
+    <!--<script>
+         let firstName = null;
+let lastName = undefined;
+
+let username;
+
+if (firstName) {
+  username = firstName;
+} else if (lastName) {
+  username = lastName;
+} else {
+  username = "Guest";
+}
+
+console.log(username); // "Guest"
+</script>-->
   </body>
 </html>
