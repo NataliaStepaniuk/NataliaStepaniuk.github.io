@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Завдання 1-->
+    <script>
+      {
+        let x = 3;
+        let y = 4;
+
+        x == 3; // true
+        x === "3"; // false(строга рівність, типи різні)
+        x != 5; // true
+        x !== "5"; // true (строга нерівність, типи різні)
+        X !== 3; // false ( слід використовувати "x")
+        y > 5; // false
+        y >= 3; // true
+        y < 5; // true
+        y <= 2; // false
+        1 == true; // true
+        null == undefined; // true
+        NaN == NaN; // false (NaN не рівне нікому, включаючи себе)
+      }
+    </script>
+    <!--Завдання 2-->
+    <script>
+      {
+        let x = 3;
+        let y = 4;
+        let z = 5;
+
+        x ||= y; // x залишається 3
+        x || (y = z); //x залишається 3
+        x &&= y; //x стає 4
+        x && (y = z); // x стає 4
+        x ??= y; // x залишається 3
+        x ?? (y = z); // x залишається 3
+      }
+    </script>
+    <!--Завдання 3-->
+    <script>
+      const secretNumber = 3;
+
+      const guess = prompt("Введіть число:");
+
+      if (guess === secretNumber) {
+        alert("Вітаю, ви вгадали!");
+      } else if (guess > secretNumber) {
+        alert("Число занадто велике.Спробуйте ще раз.");
+      } else {
+        alert("Число занадто маленьке.Спробуйте ще раз.");
+      }
+    </script>
+    <!-- <script>
+    
+    const secretNumber = 3;
+
+    const guess = parseInt(prompt("Введіть число:"));
+    switch (guess) {
+      case secretNumber:
+        alert("Вітаю, ви вгадали!");
+        break;
+      case secretNumber + 1:
+      case secretNumber + 2:
+      case secretNumber + 3:
+        alert("Число занадто велике.");
+        break;
+      case secretNumber - 1:
+      case secretNumber - 2:
+      case secretNumber - 3:
+        alert("Число занадто маленьке.");
+        break;
+      default:
+        alert("Введіть число в діапазоні від " + (secretNumber - 3) + " до " + (secretNumber + 3));
+    }
+  </script>-->
+
+    <!--Завдання 4-->
+    <script>
+      const day = prompt("Введіть назву дня тижня:");
+
+      switch (day.toLowerCase()) {
+        case "понеділок":
+        case "monday":
+          alert("Початок робочого тижня!");
+          break;
+        case "п'ятниця":
+        case "friday":
+          alert("Кінець робочого тижня!");
+          break;
+        default:
+          alert("Звичайний день");
+      }
+    </script>
+    <!--<script>
+    
+    const day = prompt("Введіть день тижня:");
+
+    if (day === "Понеділок" || day === "Monday") {
+      alert("Початок робочого тижня!");
+    } else if (day === "П'ятниця" || day === "Friday") {
+      alert("Кінець робочого тижня!");
+    } else {
+      alert("Звичайний день");
+    }
+  </script>-->
+
+    <!--Завдання 5-->
+    <script>
+      const score = parseInt(prompt("Введіть кількість балів:"));
+
+      let grade;
+      if (score < 50) {
+        grade = "F";
+      } else if (score < 70) {
+        grade = "D";
+      } else if (score < 80) {
+        grade = "C";
+      } else if (score < 90) {
+        grade = "B";
+      } else {
+        grade = "A";
+      }
+
+      alert(`Оцінка: ${grade}`);
+    </script>
+    <!--<script>  
+   
+    const score = parseInt(prompt("Введіть кількість балів:"));
+
+    const grade = score < 50 ? "F" 
+     score < 70 ? "D": score < 80 ? "C": score < 90 ? "B" : "A";
+
+    alert(`Оцінка: ${grade}`);
+  </script>-->
+
+    <!--Завдання 6-->
+    <script>
+      let firstName = null;
+      let lastName = undefined;
+      let username;
+
+      if (firstName === null && lastName === undefined) {
+        username = "Guest";
+      } else {
+        username = firstName || lastName;
+      }
+
+      console.log(username); // "Guest"
+    </script>
+  </body>
+</html>
