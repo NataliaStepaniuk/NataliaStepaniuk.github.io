@@ -11,6 +11,7 @@
 
     <script>
       function checkAge(age) {
+        var result;
         if (age > 18) {
           return true;
         } else {
@@ -27,9 +28,7 @@
         }
         return confirm("Did parents allow you?");
       }
-      // 2 - Функція буде працювати інакше, якщо видалити else.
-      // 3 - З else функція  спочатку запитує підтвердження у користувача.
-      // 4 - Без else функція  не перевіряє підтвердження у користувача, якщо age менше або дорівнює 18.
+      // Функція буде працювати так само, але завершиться після першого return.
     </script>
     <!--Завдання 2-->
     <script>
@@ -53,11 +52,17 @@
           return b;
         }
       }
+      console.log(min(2, 5));
+      console.log(min(3, -1));
+      console.log(min(1, 1));
     </script>
     <script>
       function min(a, b) {
         return a < b ? a : b;
       }
+      console.log(min(2, 5));
+      console.log(min(3, -1));
+      console.log(min(1, 1));
     </script>
     <!--Завдання 4-->
     <script>
