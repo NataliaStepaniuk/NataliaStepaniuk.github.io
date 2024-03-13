@@ -28,7 +28,7 @@
         }
         return confirm("Did parents allow you?");
       }
-      // Функція буде працювати так само, але завершиться після першого return.
+      // Функція буде працювати так само.
     </script>
     <!--Завдання 2-->
     <script>
@@ -108,14 +108,14 @@
       }
 
       // 1
-      const resultC = C();
-      A();
-      console.log(resultC);
+      {
+        console.log(A() || C());
+        console.log(A() ?? C());
+      }
       // 2
       {
-        const resultC = C();
-        B();
-        console.log(resultC);
+        console.log(B() || C());
+        console.log(B() ?? C());
       }
     </script>
   </body>
