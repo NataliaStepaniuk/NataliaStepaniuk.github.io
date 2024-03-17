@@ -2,6 +2,9 @@
 
 let str1 = "I'm a string!";
 let str2 = "I'm a string!";
+//Перевірка на довжину рядка
+let equallength = str1.length === str2.length;
+console.log("Equallength", equallength)// Рядки рівні
 
 // Перевірка на строгу рівність
 let strictEquality = str1 === str2;
@@ -131,7 +134,7 @@ console.log(sentence.includes("look on", 8)); // true
 /* Завдання 13*/
 let sentence1 = "Always look on the bright side of life";
 console.log(sentence.indexOf("l"));
-console.log(sentence.indexOf("l"[(fromIndex = 2)]));
+console.log(sentence.indexOf("l", 3));
 console.log(sentence.indexOf("L"));
 
 /* Завдання 14*/
@@ -147,13 +150,13 @@ console.log(firstWord);
 /* Завдання 15*/
 const userName = /^(?=.*[a-z])(?=.*[0-9])[-_a-z0-9]{8,16}$/;
 /* Завдання 16*/
-const regexEmail = /\\S+@\\S+/;
+const regexEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 /* Завдання 17*/
 let sentenceTask17 =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in sapien eu velit eleifend ullamcorper eget vitae nulla. Aenean euismod purus sed neque dictum, nec lobortis ante faucibus.";
 
 function truncateText(str) {
-  return str.substring(0, 51);
+  return str.substring(0, 50);
 }
 
 function truncateTextNew(str) {
