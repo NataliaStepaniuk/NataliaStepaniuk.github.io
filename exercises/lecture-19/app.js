@@ -1,6 +1,6 @@
 /* Завдання 1*/
 
-let str1 = "I'm a string!";
+let str1 = 'I\'m a string!';
 let str2 = "I'm a string!";
 //Перевірка на довжину рядка
 let equallength = str1.length === str2.length;
@@ -16,11 +16,11 @@ console.log("Loose equality:", looseEquality);
 
 /* Завдання 2*/
 let string5 = "Hello World";
-
-let firstChar = string5.charAt(0);
+let firstChar = string5[0];
+let firstChar1 = string5.charAt(0);
 
 console.log(firstChar); // 'H'
-
+console.log(firstChar1); // 'H'
 /* Завдання 3*/
 let str3 = "Hello Javascript";
 
@@ -34,14 +34,14 @@ let str4 = "Hello World!";
 
 let lastChar1 = str4[str4.length - 1];
 
-console.log(lastChar);
+console.log(lastChar1);
 
 //Method 2
 let str5 = "Hello World!";
 
-let lastChar2 = str5[-1];
+let lastChar2 = str5.slice(-1);
 
-console.log(lastChar);
+console.log(lastChar2);
 
 /* Завдання 5*/
 //Method 1
@@ -56,7 +56,7 @@ let lastChar = lastChar(str6);
 console.log(lastChar);
 //Method 2
 function lastChar(str) {
-  return str[-1];
+  return str.slice(-1);
 }
 
 let str7 = "Hello World!";
@@ -99,16 +99,12 @@ function getFullName(firstName, lastName) {
 }
 console.log(getFullName(firstName, lastName)); // "Tom Cat"
 /* Завдання 9*/
-function getFullName(firstName, lastName) {
-  return firstName + " " + lastName;
+function greeting(firstName, lastName) {
+  return `Hello, ${getFullName(firstName, lastName)}!`;
 }
-greeting = "Hello, " + getFullName("Tom Cat") + "!";
-
 /* Завдання 10*/
-function greeting(name) {
-  return `<div><h1>Hello, ${name}!</h1></div>`;
-}
-let template = greeting("Tom Cat");
+
+let template = `<div><h1>Hello, ${greeting(firstName, lastName)}!</h1></div>`;
 console.log(template); // Результат: <div><h1>Hello, Tom Cat!</h1></div>
 
 /* Завдання 11*/
@@ -148,7 +144,8 @@ console.log(startSentence);
 const firstWord = sentence.slice(0, 4);
 console.log(firstWord);
 /* Завдання 15*/
-const userName = /^(?=.*[a-z])(?=.*[0-9])[-_a-z0-9]{8,16}$/;
+const userName = /^[a-z0-9_-]{8,16}$/i;
+
 /* Завдання 16*/
 const regexEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 /* Завдання 17*/
