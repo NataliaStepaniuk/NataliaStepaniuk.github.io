@@ -78,26 +78,31 @@ mary.introduceSelf();
 tom.introduceSelf();
 /* Завдання 7 */
 const DirtyMartini = {
-  ingredients: {
-    gin: "6 fluid ounces",
-    vermouth: "1 dash",
-    oliveBrine: "1 fluid ounce",
-    olives: "4 stuffed green olives",
+  ingredients_eng: {
+    gin: 6,
+    vermouth: 1,
+    oliveBrine: 1,
+    olives: 4,
   },
-  english_please: function () {
-    console.log("ingredients:");
-    for (let [key, value] of Object.entries(this.ingredients)) {
-      console.log(`${key}: ${value}`);
-    }
+  ingredients_fr: {
+    gin: 170.4786,
+    vermouth: 1,
+    oliveBrine: 28.4131,
+    olives: 4,
   },
-  excuse_my_french: function () {
-    console.log("ingrédients:");
-    for (let [key, value] of Object.entries(this.ingredients)) {
-      if (key === "vermouth") {
-        value = "1 trait de vermouth sec (0.0351951ml)";
-      }
-      console.log(`${value}: ${key}`);
-    }
+  excuse_my_french() {
+    return `  ingredients: 
+    ${this.ingredients_fr.gin} ml de gin,  
+    ${this.ingredients_fr.vermouth} trait de vermouth sec (0.0351951ml),
+    ${this.ingredients_fr.oliveBrine} ml de saumure du pot d'olive,
+    ${this.ingredients_fr.olives} olives vertes farcies`;
+  },
+  english_please() {
+    return `ingredients: 
+      ${this.ingredients_eng.gin} fluid ounces gin,  
+      ${this.ingredients_eng.vermouth} dash dry vermouth (0.0351951ml), 
+      ${this.ingredients_eng.oliveBrine} fluid ounce brine from olive jar,
+      ${this.ingredients_eng.olives} stuffed green olives`;
   },
 };
 
