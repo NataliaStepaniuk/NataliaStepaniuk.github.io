@@ -32,8 +32,24 @@ for (let i = 0; i < containers.length; i++) {
 }
 // №8
 const headers = document.querySelectorAll(".container header");
+const classes = ['first', 'second', 'third', 'fourth']; 
 
 for (let i = 0; i < headers.length; i++) {
+  const header = headers[i];
+  const h = header.querySelector('h' + (i + 1));
+
+  if (h) {
+    
+    const hAttributes = h.attributes;
+
+    h.outerHTML = `<h${i + 1}>${h.innerHTML}</h${i + 1}>`;
+    h.classList.add(classes[i]);
+    h.setAttributes(hAttributes);
+  }
+}
+
+
+/*for (let i = 0; i < headers.length; i++) {
   const header = headers[i].querySelector("h" + (i + 1));
   if (header) {
     switch (i) {
@@ -70,4 +86,4 @@ for (let i = 0; i < headers.length; i++) {
   if (header) {
     header.classList.add(classes[i]);
   }
-}
+}*/
