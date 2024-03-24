@@ -79,14 +79,10 @@ console.log(names);
     const ofCatwoman = names.indexOf('Catwoman');
     const ofJoker = names.indexOf('Joker');
     
-    if (ofCatwoman !== -1) {
-        names.splice(ofCatwoman, 1, 'Alfred');
-    }
-    
-    if (ofJoker !== -1) {
-        names.splice(ofJoker, 1, 'Alfred');
-    }
-    
+    if (catwomanIndex !== -1 && jokerIndex !== -1) {
+      names.splice(catwomanIndex, 2, 'Alfred');
+  }
+  
     console.log(names);
 }
 // Завдання 14
