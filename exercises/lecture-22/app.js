@@ -32,22 +32,22 @@ for (let i = 0; i < containers.length; i++) {
 }
 // №8
 const headers = document.querySelectorAll(".container header");
-const classes = ['first', 'second', 'third', 'fourth']; 
+const classes = ["first", "second", "third", "fourth"];
 
 for (let i = 0; i < headers.length; i++) {
-  const header = headers[i];
-  const h = header.querySelector('h' + (i + 1));
+  let cName = headers[i].firstElementChild.classList;
+  let idName = headers[i].firstElementChild.id;
+  let innerText = headers[i].firstElementChild.innerText;
 
-  if (h) {
-    
-    const hAttributes = h.attributes;
-
-    h.outerHTML = `<h${i + 1}>${h.innerHTML}</h${i + 1}>`;
-    h.classList.add(classes[i]);
-    h.setAttributes(hAttributes);
+  if (i !== 0) {
+    headers[i].innerHTML = `<h${
+      i + 1
+    } class='${cName}' id='${idName}'>${innerText}</h${i + 1}>`;
   }
-}
 
+  headers[i].firstElementChild.classList.add(classes[i]);
+  console.log(headers[i]);
+}
 
 /*for (let i = 0; i < headers.length; i++) {
   const header = headers[i].querySelector("h" + (i + 1));
