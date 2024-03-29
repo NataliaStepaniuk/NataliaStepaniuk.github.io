@@ -58,7 +58,7 @@ function createTable() {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  studentsArray.forEach((student) => {
+  students.forEach((student) => {
     const row = document.createElement("tr");
     Object.values(student).forEach((value) => {
       const cell = document.createElement("td");
