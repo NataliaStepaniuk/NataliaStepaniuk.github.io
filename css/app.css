@@ -21,6 +21,17 @@
 .flex-container > * {
   width: 100%;
 }
+
+@media (min-width: 35rem) {
+
+  .flex-container > * {
+      width: 100%;
+  }
+  .flex-container > * {
+      width: calc((100% - 2rem) / 3);
+  }
+  
+}
 .bg-dark {
   background-color: black;
 }
@@ -38,7 +49,7 @@
 }
 
 .divider {
-  background: url(/images/1653673874_18-celes-club-p-fon-dlya-saita-internet-magazina-krasivie-18.jpg);
+  background: url(/images/product-04.jpg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -185,4 +196,40 @@
 
 .btn-red-gradient:hover {
   background-position: 0 0;
+}
+.btn {
+  background-color: hsl(0, 0%, 90%);
+  border: 1px solid hsl(0, 0%, 70%);
+  outline: none;
+  cursor: pointer;
+  padding: .5rem 1em;
+  border-radius: .4em;
+}
+
+.btn:hover, .btn:focus {
+  background-color: hsl(0, 0%, 80%);
+  box-shadow: 0 0 5px 0 hsl(0, 0%, 70%);;
+}
+
+.btn-primary {
+  background-color: salmon;
+  border-color:maroon;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  border-color:maroon;
+  color: salmon;
+}
+.test-css {
+  color:red; 
+  font: 600 2.5rem/1.7; 
+  padding:1.5rem 2rem; 
+  text-align:center;  
+  background-color: aqua;
+}
+
+.test-css2 {
+  background-color: violet;
 }

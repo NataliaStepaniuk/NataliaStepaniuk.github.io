@@ -62,7 +62,7 @@
       </symbol>
     </svg>
     <!-- page header-->
-    <header class="page-header">
+    <header class="page-header mb-3">
       <!-- brand -->
       <a href="/index.html" class="brand">SteNa</a>
       <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
@@ -373,105 +373,60 @@
     <section id="divider" class="divider py-5 mb-3">
       <div class="container text-right px-4">
         <p>Нова колекція 2024</p>
-        <h1 mb-2>20% Скидки на колекцію минулого сезону</h1>
+        <h1 class="mb-3">20% Скидки на колекцію минулого сезону</h1>
         <a href="#!" class="btn-red-gradient">Огляд колекції</a>
       </div>
     </section>
     <!-- servicies-->
     <section id="services mb-3">
-      <div class="flex-container py-3">
-        <div class="text-center">
-          <div class="svg-icon d-inline-block mr-5">
-            <svg class="svg-icon-item">
-              <use xlink:href="#delivery-time"></use>
-            </svg>
-            <div class="text-start">
-              <h3>Доставка</h3>
-            </div>
+      <div class="flex-container py-3 text-center">
+        <div class="svg-icon d-inline-block">
+          <svg class="svg-icon-item">
+            <use xlink:href="#delivery-time"></use>
+          </svg>
+          <div class="text-start">
+            <h3>Free shipping</h3>
+            <p>Free shipping worldwild</p>
           </div>
-          <div class="svg-icon d-inline-block mr-5">
-            <svg class="svg-icon-item">
-              <use xlink:href="#helpline-24h"></use>
-            </svg>
-            <div class="text-start">
-              <h3>Ми на звя'зку 24/7</h3>
-            </div>
+        </div>
+        <div class="svg-icon d-inline-block">
+          <svg class="svg-icon-item">
+            <use xlink:href="#helpline-24h"></use>
+          </svg>
+          <div class="text-start">
+            <h3>Free shipping</h3>
+            <p>Free shipping worldwild</p>
           </div>
-          <div class="svg-icon d-inline-block">
-            <svg class="svg-icon-item">
-              <use xlink:href="#label-tag"></use>
-            </svg>
-            <div class="text-start">
-              <h3>Акції</h3>
-            </div>
+        </div>
+        <div class="svg-icon d-inline-block">
+          <svg class="svg-icon-item">
+            <use xlink:href="#label-tag"></use>
+          </svg>
+          <div class="text-start">
+            <h3>Free shipping</h3>
+            <p>Free shipping worldwild</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- page footer-->
-    <footer class="mb-3">
-      <div class="container page-footer">
-        <section class="footer-main">
-          <div class="footer-main-item">
-            <h3 class="footer-title">Покупцю</h3>
-            <ul>
-              <li><a href="">Послуги</a></li>
-              <li><a href="">Ціни</a></li>
-              <li><a href="">Доставка та оплата</a></li>
-              <li><a href="">Відгуки</a></li>
-              <li><a href="./exercises/index.html">Exercises</a></li>
-            </ul>
-          </div>
-          <div class="footer-main-item">
-            <h3 class="footer-title">Сервіс</h3>
-            <ul>
-              <li><a href="">Сезонні пропозиції</a></li>
-              <li><a href="">Бонусний рахунок</a></li>
-              <li><a href="">Подарункові сертифікати</a></li>
-              <li><a href="">Обмін</a></li>
-            </ul>
-          </div>
-          <div class="footer-main-item">
-            <h3 class="footer-title">Допомога</h3>
-            <ul>
-              <li><a href="">Гарантія</a></li>
-              <li><a href="">Кредити</a></li>
-              <li><a href="">Сервісні центри</a></li>
-              <li><a href="">Повернення товару</a></li>
-            </ul>
-          </div>
-        </section>
+    <hr>
 
-        <section class="footer-social py-3">
-          <ul class="footer-social-list list-unstyled">
-            <li>
-              <a href=""><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-github"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-youtube"></i></a>
-            </li>
-          </ul>
-        </section>
-        <section class="footer-ligal">
-          <ul class="footer-ligal-list">
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">&copy; 2024 Copyright SteNa Inc.</a></li>
-          </ul>
-        </section>
-      </div>
-    </footer>
+    <dialog id="details">
+      <a href="#!" title="Close" class="close fas fa-times"></a>
+      <div class="detail-container">
+        <div class="col-left">
+          <img src="/images/product-5.jpg" />
+        </div>
+
+        <div class="col-right">
+          <h2>Product Name</h2>
+        </div>
+      </div> 
+    </dialog>
+    
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
+
+    
   </body>
 </html>

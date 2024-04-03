@@ -45,212 +45,68 @@
       </div>
     </section>
     <section class="" id="catalog">
-      <aside>
-        <h2 class="text-uppercase">Категорії</h2>
-        <div class="bg-dark text-white">
-          <strong class="text-uppercase">Fashion &amp; Acc</strong>
-        </div>
 
-        <ul class="list-unstyled categories">
-          <li><a href="#!">Блузи</a></li>
-          <li><a href="#!">Плаття</a></li>
-          <li><a href="#!">Спідниці</a></li>
-          <li><a href="#!">Джинси</a></li>
-          <li><a href="#!">Куртки</a></li>
-          <li><a href="#!">Аксесуари</a></li>
-        </ul>
-      </aside>
-      <main>
-        <div class="container py-3 px-4">
-          <div class="product-container">
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/9563A-MLC-050-1-490511_2.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/7130J-99X-050-1-770419_1.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/3889K-99X-001-1-478667_4.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/0384X-39X-001-1-678931_6.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/7706A-83X-050-1-465383_28.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
-            <article class="product">
-              <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-              </div>
-              <div class="image">
-                <div class="badge bg-sale">Sale</div>
-                <img
-                  src="/images/ZC338-09J-050-1-769646_6.jpg"
-                  alt="Picture for product"
-                  height="200"
-                />
-              </div>
-              <div class="content">
-                <h3>Колекція</h3>
-                <span class="price">19.99</span>
-                <span class="price">9.99</span>
-              </div>
-            </article>
+      <aside id="sidebar">
+
+          <div class="sidebar-wrapper">
+
+              <header>
+                  <h2 class="text-uppercase">Categories</h2>
+              </header>
+
+              <span id="category-container"></span>
+
+              <h2 class="text-uppercase mb-4">Show only</h2>
+
+              <span class="show-only"></span>
+
           </div>
-        </div>
+
+      </aside>
+
+      <main>
+
+          <div class="container py-3 px-4">
+
+              <header class="header">
+
+                  <h2 class="text-center">Our <span>Products</span></h2>
+
+              </header>
+
+              <div class="row mb-3 align-items-center">
+                  
+                  <div class="col mb-2 mb-lg-0">
+
+                      <p class="text-sm text-muted mb-0">Showing 1–12 of 53 results</p>
+
+                  </div>
+
+                  <div class="col">
+                      
+                      <select id="selectpicker" class="form-select form-select-lg mb-2 text-sm text-muted" name="sorting" data-width="200" data-title="Default sorting"></select>
+
+                  </div>
+                  
+              </div>
+
+              <div class="product-container"></div>
+
+          </div>
+          
       </main>
-    </section>
 
-    <footer class="mb-3">
-      <div class="container page-footer">
-          <section class="footer-main">
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Покупцю</h3>
-                  <ul>
-                    <li><a href="">Послуги</a></li>
-                    <li><a href="">Ціни</a></li>
-                    <li><a href="">Доставка та оплата</a></li>
-                    <li><a href="">Відгуки</a></li>
-                    <li><a href="./exercises/index.html">Exercises</a></li>
-                  </ul>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Сервіс</h3>
-                  <ul>
-                    <li><a href="">Сезонні пропозиції</a></li>
-                    <li><a href="">Бонусний рахунок</a></li>
-                    <li><a href="">Подарункові сертифікати</a></li>
-                    <li><a href="">Обмін</a></li>
-                  </ul>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Допомога</h3>
-                  <ul>
-                    <li><a href="">Гарантія</a></li>
-                    <li><a href="">Кредити</a></li>
-                    <li><a href="">Сервісні центри</a></li>
-                    <li><a href="">Повернення товару</a></li>
-                  </ul>
-              </div>
-          </section>
-        <section class="footer-social">
-          <ul class="footer-social-list">
-            <li>
-              <a href=""><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-github"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-youtube"></i></a>
-            </li>
-          </ul>
-        </section>
+  </section>
 
-        <section class="footer-ligal">
-          <ul class="footer-ligal-list">
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">&copy; 2024 Copyright SteNa Inc.</a></li>
-          </ul>
-        </section>
-      </div>
-    </footer>
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
+    <!-- page footer -->
+    
+    <dialog id="details">
+        <a href="#!" title="Close" class="close fas fa-times"></a>
+        <span class="dialog-main"></span>
+        
+          
+      </dialog>
   </body>
 </html>
