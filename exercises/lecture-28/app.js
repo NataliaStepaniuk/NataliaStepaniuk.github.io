@@ -17,11 +17,11 @@ const registrationForm = document.getElementById("registrationForm");
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const { name, email, password } = registrationForm.elements;
+  const { username, email, password } = registrationForm.elements;
 
   errorMessages.innerHTML = "";
 
-  if (!name.value.trim()) {
+  if (!username.value.trim()) {
     displayError("Поле з ім'ям є обов'язковим.");
     return;
   }
