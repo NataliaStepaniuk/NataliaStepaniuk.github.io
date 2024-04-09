@@ -1,48 +1,47 @@
 class AuthException extends Error {
-    constructor(code, message) {
-      super(message); 
-      this.code = code; 
-    }
-  
-    toString() {
-      return `${this.code}: ${this.message}`; 
-    }
+  constructor(code, message) {
+    super(message ? `${code}: ${message}` : code);
+    this.code = code;
   }
-  
-  const checkAuth = document.querySelector('.check-auth');
-  
-  checkAuth.addEventListener('click', () => {
-    try {
-      if (!isAuth()) {
-        throw new AuthException('FORBIDDEN', 'You don\'t have access to this page');
-      }
-  
-      window.open('success.html');
-    } catch (e) {
-      const dialogBox = document.getElementById('dialogBox');
-      showDialog(e.message); 
+
+  toString() {
+    return this.message;
+  }
+}
+
+let isAuth = (auth) => auth ?? false;
+let dialogBoxId = document.getElementById("dialogBox");
+let dialogBox = dialogBoxId.querySelector(".message");
+let checkAuth = document.querySelector(".check-auth");
+
+checkAuth.addEventListener('click',() => {
+  try {
+    if (!isAuth()) {
+      throw new AuthException('FORBIDDEN', 'You do not have access to this page');
+    } else {
+      window.open('success.html', '_blank');
+    }
+  } catch (e) {
+    dialogBox.textContent = e;
+    showDialog();
+  }
+});
+
+function showDialog() {
+  dialogBoxId.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
     }
   });
   
-  function showDialog(message) {
-    const dialogBox = document.getElementById('dialogBox');
-    const messageElement = dialogBox.querySelector('.message');
-    messageElement.textContent = message;
-    dialogBox.classList.add('open');
+  dialogBoxId.showModal(); 
+}
+
+function closeDialog() {
   
-    dialogBox.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        closeDialog(); 
-      }
-    });
-  }
-  
-  function closeDialog() {
-    dialogBox.classList.remove('open');
-  }
-  
-  let isAuth = (auth) => auth ?? false; 
-  
-  let dialogBox = document.getElementById("dialogBox"); 
+  dialogBoxId.close(); 
+}
+
+
+
   
