@@ -19,13 +19,13 @@ class AuthException extends Error {
   
       window.open('success.html');
     } catch (e) {
-      const dialogBoxId = document.getElementById('dialogBoxId');
+      const dialogBox = document.getElementById('dialogBox');
       showDialog(e.message); 
     }
   });
   
   function showDialog(message) {
-    const dialogBox = document.getElementById('dialogBoxId');
+    const dialogBox = document.getElementById('dialogBox');
     const messageElement = dialogBox.querySelector('.message');
     messageElement.textContent = message;
     dialogBox.classList.add('open');
