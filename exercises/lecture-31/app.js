@@ -1,9 +1,9 @@
 const url = "https://jsonplaceholder.typicode.com/posts";
 
-const template = (item) => `
+const template = (item, authorName) => `
 <h3>${item.title}</h3>
 <div>${item.body}</div>
-<p>Author: <strong><span class="author" data-id="${item.userId}"></stan></strong></p>
+<p>Author: <strong><span class="author" data-id="${item.userId}">${authorName}</span></strong></p>
 `;
 
 const xhrPromise = (method, url) => {
@@ -28,25 +28,34 @@ const xhrPromise = (method, url) => {
   return promise;
 };
 
+const usersCache = {};
+
 xhrPromise("GET", url)
-  .then((response) => {
-    const posts = JSON.parse(response);
-    let result = "";
-    posts.forEach((item) => {
-      result += template(item);
+  .then((response) => JSON.parse(response))
+  .then((posts) => {
+    const promises = posts.map((post) => {
+      if (usersCache[post.userId]) {
+        return Promise.resolve(usersCache[post.userId]);
+      } else {
+        return xhrPromise(
+          "GET",
+          `https://jsonplaceholder.typicode.com/users/${post.userId}`
+        ).then((response) => {
+          const user = JSON.parse(response);
+          usersCache[post.userId] = user.name;
+          return user.name;
+        });
+      }
     });
+
+    return Promise.all(promises);
+  })
+  .then((authorNames) => {
+    const result = authorNames.reduce((acc, authorName, index) => {
+      const post = post[index];
+      return acc + template(post, authorName);
+    }, "");
+
     document.getElementById("blog").innerHTML = result;
   })
-  .then(() => {
-    const users = document.querySelectorAll(".author");
-    users.forEach(user => {
-      xhrPromise(
-        "GET",
-        `https://jsonplaceholder.typicode.com/users/${user.dataset.id}`
-      )
-      .then((response) => {
-        let userName = JSON.parse(response);
-        user.textContent = userName.name;
-      });
-    });
-  });
+  .catch((error) => console.error(error));
