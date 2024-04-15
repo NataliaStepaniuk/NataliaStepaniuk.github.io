@@ -83,7 +83,7 @@ const xhrPromise = (method, url) => {
 
 const userCache = {};
 
-xhrPromise("GET", urlPosts)
+/*xhrPromise("GET", urlPosts)
   .then(posts => {
     const userPromises = posts.map(post => {
       if (userCache[post.userId]) {
@@ -108,7 +108,34 @@ xhrPromise("GET", urlPosts)
   })
   .catch(error => {
     console.error(error);
+  });*/
+  xhrPromise("GET", urlPosts)
+  .then(posts => {
+    for (let i = 0; i < posts.length; i++) {
+      const post = posts[i];
+
+      let userPromise;
+      if (userCache[post.userId]) {
+        userPromise = Promise.resolve(userCache[post.userId]);
+      } else {
+        userPromise = xhrPromise("GET", `${urlUsers}/${post.userId}`);
+      }
+
+      userPromise
+        .then(user => {
+          userCache[user.id] = user;
+          const result = template(post, user);
+          document.getElementById("blog").innerHTML += result;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  })
+  .catch(error => {
+    console.error(error);
   });
+
 
     
 
