@@ -1,10 +1,10 @@
 /*footer*/
 .page-footer {
-  --footer-background-color: #555;
-  --footer-social-background-color: #333;
-  --footer-ligal-background-color: #000;
-  --footer-a-color: #eee;
-  --footer-light-color: #fff;
+  --footer-background-color: #221e1e;
+  --footer-social-background-color:  #221e1e;
+  --footer-ligal-background-color:  #221e1e;
+  --footer-a-color: #f5ecec;
+  --footer-light-color: #f5ecec;
   --footer-a-font-size: 0.85rem;
   background-color: var(--footer-background-color);
   
@@ -48,7 +48,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: #221e1e;
     > .footer-social-list {
       > li {
         display: inline-block;
@@ -65,7 +65,7 @@
   }
   > .footer-ligal {
    background-color: var(--footer-ligal-background-color);
-    background-color: #000;
+    background-color:  #221e1e;
   
 
     > ul.footer-ligal-list {
@@ -92,14 +92,6 @@
 }
 
 
-.page-footer ul {
-  list-style: none;
-}
-
-.page-footer ul > li > a {
-  color: #221212;
-
-}
 
 
 

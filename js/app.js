@@ -708,7 +708,7 @@ function main() {
 const template = document.createElement('template');
 
 template.innerHTML = `
-<footer class="mb-3">
+<footer >
       <div class="container page-footer">
           <section class="footer-main">
               <div class="footer-main-item">

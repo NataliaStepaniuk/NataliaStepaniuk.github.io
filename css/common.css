@@ -11,14 +11,14 @@
 }
 
 :root {
-  --primary-text-color: #44101d;
-  --primary-bg-color: #e6dddd;
+  --primary-text-color: #0c0708;
+  --primary-bg-color: white;
   --primary-font-family: "Roboto", sans-serif;
   --primary-font-size: 0.875rem;
 
-  --main-color: #4e1f44;
-  --anchor-color:#52193b;
-  --anchor-active-color: rgba(68, 3, 43, 0.884);
+  --main-color: #0c0708;
+  --anchor-color:#0c0708;
+  --anchor-active-color: #0c0708;
   --currency-symbol: "\20B4"; /*unicode*/
 }
 
@@ -71,11 +71,3 @@ ul.categories li a:hover {
 }
 
 
-footer {
-  --footer-text-color: #fff;
-  --footer-bg-color: #000;
-}
-
-.footer-social ul li {
-  padding: 1em 1em;
-}

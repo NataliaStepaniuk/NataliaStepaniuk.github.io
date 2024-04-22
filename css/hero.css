@@ -2,9 +2,11 @@
 .hero {
     background-color: aliceblue;
     text-shadow: rgb(0, 0, 0 / .5) 2px 2px 2px;
-
+    color: white;
 
     background-image: url(/images/product-0.jpg);
-    background-position: center center;
+    background-position:top center;
     background-size: cover;
+
+    
 }

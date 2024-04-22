@@ -49,7 +49,7 @@
 }
 
 .divider {
-  background: url(/images/product-04.jpg);
+  background: url(/images/carousel/13c13b92980dd618287a0278244874f7.jpg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -57,26 +57,10 @@
 
 .text-right {
   text-align: right;
+  color: #f0eaea;
 }
 
-.divider h1 {
-  font-size: 4vw;
-  font-weight: 700;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgb(25, 76, 192)),
-    color-stop(20%, rgb(196, 26, 3)),
-    color-stop(40%, rgb(236, 190, 6)),
-    color-stop(60%, rgb(25, 76, 192)),
-    color-stop(80%, rgb(3, 116, 8)),
-    to(rgb(196, 26, 3))
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 /* padding */
 .py-0 {
@@ -180,7 +164,7 @@
   text-align: center;
 }
 .text-white {
-  color: white;
+  color: rgb(8, 8, 8);
 }
 
 .btn-red-gradient {
