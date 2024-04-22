@@ -60,18 +60,16 @@ async function getPosts() {
     const posts = await response.json();
 
     for (const post of posts) {
-      if (userCache[post.userId]) {
-        continue; 
+      if (!userCache[post.userId]) {
+        const userResponse = await fetch(`${urlUsers}/${post.userId}`);
+        if (!userResponse.ok) {
+          throw new Error(`Error fetching user ${post.userId}: ${userResponse.status}`);
+        }
+        const user = await userResponse.json();
+        userCache[post.userId] = user;
       }
 
-      const userResponse = await fetch(`${urlUsers}/${post.userId}`);
-      if (!userResponse.ok) {
-        throw new Error(`Error fetching user ${post.userId}: ${userResponse.status}`);
-      }
-      const user = await userResponse.json();
-      userCache[user.id] = user;
-
-      const result = template(post, user);
+      const result = template(post, userCache[post.userId]);
       document.getElementById("blog").innerHTML += result;
     }
   } catch (error) {
