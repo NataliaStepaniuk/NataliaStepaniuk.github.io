@@ -3,8 +3,7 @@
 const currency = (total) => parseFloat(Math.round(total * 100) / 100).toFixed(2);
 const filterItem = (items, id) => items.filter(item => item.id != id);
 const findItem = (items, id) => items.find(item => item.id == id);
-
-const compare = (key, order='asc') => (a, b) => {
+const compare = (key, order='acs') => (a, b) => {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
     
     const A = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
@@ -22,16 +21,14 @@ const findByProps = function(items, props, what) {
             founds.push(items[i]);
         }            
     })
-
     return founds;
 }
 
-
 const sortingOrders = [
-    {key:"default", value: "Default sorting"}, 
-    {key:"popularity", value:"Popularity Products"}, 
-    {key:"low-high", value:"Low to High Price"}, 
-    {key:"high-low", value:"High to Low Price"}
+    {key:"default", value: "Сортування"}, 
+    {key:"popularity", value:"Популярні продукти"}, 
+    {key:"low-high", value:"Низькі ціни"}, 
+    {key:"high-low", value:"Високі ціни"}
 ];
 
 function Product(id, name, price, image) {
@@ -40,6 +37,7 @@ function Product(id, name, price, image) {
     this.price = price;
     this.image = image;
 }
+
 
 function CardProduct(productList, item) {
     
@@ -92,32 +90,33 @@ function CardProduct(productList, item) {
     const closeButton = dialog.querySelector("dialog .close");
     let dialogMain = dialog.querySelector("dialog .dialog-main");
     
+    
+
     function renderModal(modal) {
         modal.querySelector('.btn-inc').addEventListener('click', e => {
             let val = e.target.previousElementSibling.value;
             val++;
             e.target.previousElementSibling.value = val;
         });
-
         modal.querySelector('.btn-dec').addEventListener('click', e => {
             let val = e.target.nextElementSibling.value;
             if (val > 1) {
                 val--;
-            }
+            }    
             e.target.nextElementSibling.value = val;
         });
 
+
         let quantityResult = modal.querySelector('.quantity-result');
         let addToCart = modal.querySelector('.add-to-cart');
-        
         addToCart.addEventListener('click', e => {
             let id = e.target.closest('.to-cart').dataset.id;
             let product = productList.getProductById(id);
             product = {...product, amount: +quantityResult.value};
             shoppingCart.addItemToCart(product);
         })
-    }
 
+    }
     showButton.addEventListener("click", event => {
         let parent = event.target.closest('.product');
         let id = parent.dataset.id;
@@ -140,11 +139,12 @@ function CardProduct(productList, item) {
         let product = productList.getProductById(id);
         product = {...product, amount: 1};
         shoppingCart.addItemToCart(product);
+        // document.getElementById('cart-amount').textContent = shoppingCart.totalAmount();
     } 
 }
 
-function Cart(tax = 0.07, shipping = 0) {
-
+function Cart(tax = 0.0, shipping = 0) {
+    // console.log("Cart constructor", this);
     this.tax = tax;
     this.shipping = shipping;
 
@@ -153,9 +153,11 @@ function Cart(tax = 0.07, shipping = 0) {
     let cart = store.init('basket');
 
     this.saveCart = function() {
+        // console.log(cart);
         store.set('basket', cart);
         cartAmount.textContent = shoppingCart.totalAmount();
     }
+
 
     function Item (id, price, amount) {
         this.id = id;
@@ -164,24 +166,34 @@ function Cart(tax = 0.07, shipping = 0) {
     }
 
     const cartItemTemplate = (item, product) => `
+    
     <div class="row cart-item" id="id${product.id}">
         <div class="cell"><img src="${product.image}" alt="${product.name}" height="30"></div>
         <div class="cell">${product.name}</div>
         <div class="cell"><span class="product-price price">${product.price}</span></div>
 
+
         <div class="cell">
-            <div class="number-input quantity" data-id="${product.id}">
-                <button class="btn btn-dec">-</button>
-                <input class="quantity-result"
-                                type="number" 
-                                value="${item.amount}"
-                                min="1"
-                                max="10"
-                                required 
-                                />
-                <button class="btn btn-inc">+</button>
-            </div>
+
+        <div class="number-input quantity" data-id="${product.id}">
+                        <button class="btn btn-dec">-</button>
+                        <input class="quantity-result"
+                                        type="number" 
+                                        value="${item.amount}"
+                                        min="1"
+                                        max="10"
+                                        required 
+                                        />
+                        <button class="btn btn-inc">+</button>
+                    </div>
+        
+        
+        
+        
+        
         </div>
+
+
 
         <div class="cell"><span class="product-subtotal price">0</span></div>
         <div class="cell"><a href="#!" data-id="${product.id}" class="fas fa-trash-alt"></a></div>
@@ -189,19 +201,16 @@ function Cart(tax = 0.07, shipping = 0) {
     `;
 
     const findItem = (items, id) => items.find(item => item.id == id);
-
     this.populateShoppingCart = (products) => {
         let result = `
         <div class="row header">
-            <div class="cell">Cover</div>
-            <div class="cell">Product</div>
-            <div class="cell">Price</div>
-            <div class="cell">Quantity</div>
-            <div class="cell">Total</div>
-            <div class="cell">Action</div>
-        </div>
-        `;
-
+                        <div class="cell">Продукт</div>
+                        <div class="cell">Назва</div>
+                        <div class="cell">Ціна</div>
+                        <div class="cell">Кількість</div>
+                        <div class="cell">Сума</div>
+                        <div class="cell">Видалити</div>
+        </div>`;
         cart.forEach(item => result += cartItemTemplate(item, findItem(products, item.id)));
         return result;
     }
@@ -215,6 +224,7 @@ function Cart(tax = 0.07, shipping = 0) {
             tmpTotal = +price * item.amount;
             shoppingCartItems.querySelector(`#id${item.id} .product-subtotal`).textContent = parseFloat(tmpTotal).toFixed(2);
             subTotal += parseFloat(tmpTotal).toFixed(2);
+
         });
 
         document.querySelector('.cart-subtotal').textContent = this.totalInCart();
@@ -222,19 +232,18 @@ function Cart(tax = 0.07, shipping = 0) {
         document.querySelector('.cart-shipping').textContent = this.shipping;
         document.querySelector('.cart-total').textContent = (+this.totalInCart() + +this.tax + +this.shipping).toFixed(2);
     }
-    
+    // 
     this.addItemToCart = function(product) {
 
         let inCart = cart.some(item => item.id === product.id);
 
-        if(inCart) {
+        if (inCart){
             let index = cart.findIndex(item => item.id === product.id);
             cart[index].amount += product.amount;
-        } else {
+        }else{
             let item = new Item(product.id, product.price, product.amount);
             cart.push(item);
         }
-
         this.saveCart();
     }
 
@@ -290,64 +299,65 @@ function Cart(tax = 0.07, shipping = 0) {
         this.saveCart();
     }
 
-    this.renderCart = function(shoppingCartItems) {
-        this.setCartTotal(shoppingCartItems)
-        shoppingCartItems.addEventListener('click', event => {
+    this.renderCart = function(shippingCartItems) {
+        this.setCartTotal(shippingCartItems)
+        shippingCartItems.addEventListener('click', event => {
             if(event.target.classList.contains('fa-trash-alt')) {
                 cart = filterItem(cart, event.target.dataset.id);
-                this.setCartTotal(shoppingCartItems)
+                this.setCartTotal(shippingCartItems)
                 this.saveCart();
                 event.target.closest('.cart-item').remove();
             } else if (event.target.classList.contains('btn-inc')) {
                 let tmp = findItem(cart, event.target.closest('.quantity').dataset.id);
                 tmp.amount += 1;
+                console.log("tmp ", tmp)
                 event.target.previousElementSibling.value = tmp.amount;
-                this.setCartTotal(shoppingCartItems)
+                this.setCartTotal(shippingCartItems)
                 this.saveCart();
-            } else if (event.target.classList.contains('btn-dec')) {
+            }else if (event.target.classList.contains('btn-dec')) {
                 let tmp = findItem(cart, event.target.closest('.quantity').dataset.id);
-
-                if(tmp !== undefined && tmp.amount > 1) {
+                if (tmp !== undefined && tmp.amount > 1){
                     tmp.amount -= 1;
-                    event.target.nextElementSibling.value = tmp.amount;
+                event.target.nextElementSibling.value = tmp.amount;
                 } else {
                     cart = filterItem(cart, event.target.dataset.id);
                     event.target.closest('.cart-item').remove();
                 }
-
-                this.setCartTotal(shoppingCartItems)
+                this.setCartTotal(shippingCartItems)
                 this.saveCart();
             }
         })
+
     }
 
+
 }
+
 
 const starsTemplate = (n) => Array(n).fill('&starf;').concat(Array(5 - n).fill('&star;')).join('');
 
 function ProductList(products) {
-
+    
     this.products = products;
 
     this.productTemplate = (product) => `
-    <article class="product" data-id="${product.id}">
-        <div class="icons">
-            <a href="#!" class="fas fa-shopping-cart add-to-cart"></a>
-            <a href="#!" class="fas fa-heart add-to-wishlist"></a>
-            <a href="#!" class="fas fa-eye show-details"></a>
-        </div>
-        <div class="image">
-            <div class="badge bg-${product.badge.bg}">${product.badge.title}</div>
-            <img src="${product.image}" alt="${product.name}">
-        </div>
-        <div class="content" data-id="${product.id}">
-            <h3 class="product-name">${product.name}</h3>
-            <span> <span class="price product-price">${product.price}</span></span> <span class="stars">${starsTemplate(product.stars)}</span> 
-        </div>
-    </article>
-    `;
+        <article class="product" data-id="${product.id}">
+            <div class="icons">
+                <a href="#!" class="fas fa-shopping-cart add-to-cart"></a>
+                <a href="#!" class="fas fa-heart add-to-wishlist"></a>
+                <a href="#!" class="fas fa-eye show-details"></a>
+            </div>
+            <div class="image">
+                <div class="badge bg-${product.badge.bg}">${product.badge.title}</div>
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="content" data-id="${product.id}">
+                <h3 class="product-name">${product.name}</h3>
+                <span><span class="price"></span><span class="price product-price">${product.price}</span></span> <span class="starf">${starsTemplate(product.stars)}</span>
+            </div>                    
+        </article>`;
 
-    this.populateProductList = function(products) {
+    this.populateProductList = function (products) {
         let content = "";
         products.forEach(item => content += this.productTemplate(item))
         return content;
@@ -366,7 +376,6 @@ const ulElement = items => {
     for (let item of items) {
         res += liElement(item);
     }
-
     ul.innerHTML = res;
     return ul;
 }
@@ -376,6 +385,7 @@ const distinctSections = items => {
     let unique = [...new Set(mapped)];
     return unique;
 }
+
 
 function categoriesCollation(distinct, categories) {
     let result = [];
@@ -401,16 +411,18 @@ const populateCategories = (categoryContainer, categories) => {
         categoryContainer.append(sectionName(distinct[i]));
         categoryContainer.append(ulElement(collation[i]));
     }
+
 }
+
 
 function renderCategory(productContainer, selector, products) {
     const categoryItems = document.querySelectorAll(selector);
 
-    categoryItems.forEach(item => item.addEventListener('click', event => {
-        event.preventDefault();
+    categoryItems.forEach(item => item.addEventListener('click', e => {
+        e.preventDefault();
 
-        if (event.target.classList.contains('category-item')) {
-            const category = event.target.dataset.id;
+        if (e.target.classList.contains('category-item')) {
+            const category = e.target.dataset.id;
             const categoryFilter = items => items.filter(item => item.category == category);
             productContainer.innerHTML = productList.populateProductList(categoryFilter(products));
         } else {
@@ -423,7 +435,6 @@ function renderCategory(productContainer, selector, products) {
     }))
 }
 
-
 const sortingOptions = () => sortingOrders.map(item => `<option value="${item.key}">${item.value}</option>`).join('');
 
 function renderSelect(selectPicker, products, productContainer) {
@@ -434,19 +445,23 @@ function renderSelect(selectPicker, products, productContainer) {
             case 'low-high':
                 productContainer.innerHTML = productList.populateProductList(products.sort(compare('price', 'asc')))
                 break;
-            case 'high-low' :
+            case 'high-low':
                 productContainer.innerHTML = productList.populateProductList(products.sort(compare('price', 'desc')))
                 break;
-            case 'popularity' :
+            case 'popularity':
                 productContainer.innerHTML = productList.populateProductList(products.sort(compare('stars', 'desc')))
                 break;
+
             default:
                 productContainer.innerHTML = productList.populateProductList(products.sort(compare('id', 'asc')))
+            
         }
         let productCards = productContainer.querySelectorAll('.product');
         productCards.forEach(item => new CardProduct(item));
+
     });
 }
+
 
 function Store() {
 
@@ -463,7 +478,6 @@ function Store() {
 
     this.get = function(key) {
         let value = localStorage.getItem(key);
-        console.log('Value for key', key, 'is', value);
         return value === null ? null : JSON.parse(value);
     }
 
@@ -473,17 +487,18 @@ function Store() {
     
 }
 
+
 const badgeTemplate = (item) => `
 <div class="form-check mb-1">
-    <input class="form-check-input" type="checkbox" id="id-${item}" value="${item}" name="badge">
-    &nbsp;<label class="form-check-label" for="id-${item}">${item}</label>
+<input class="form-check-input" type="checkbox" id="id-${item}" value="${item}" name="badge">
+&nbsp;<label class="form-check-label" for="id-${item}">${item}</label>
 </div>
 `;
 
 const renderList = (products, value) => productList.populateProductList(products.filter(product => product.badge.title.includes(value)));
 
 const renderShowOnly = (showOnly, products, productContainer) => {
-    let badges = [...new Set([...products.map(item => item.badge.title)].filter(item => item != ''))];
+    let badges = [...new Set([...products.map(item => item.badge.title)].filter(item=>item != ''))];
 
     showOnly.innerHTML = badges.map(item => badgeTemplate(item)).join("");
     let checkboxes = showOnly.querySelectorAll('input[name="badge"]');
@@ -491,31 +506,32 @@ const renderShowOnly = (showOnly, products, productContainer) => {
     let values = [];
 
     checkboxes.forEach(item => {
-        item.addEventListener("change", event => {
-            if(event.target.checked) {
+        item.addEventListener("change", e => {
+            if(e.target.checked) {
                 values.push(item.value);
                 productContainer.innerHTML = values.map(value => renderList(products, value)).join("");
-            } else {
+            }else{
                 if (values.length != 0) {
-                    values.pop(item.value);
+                    values.pop(item.value)
                     productContainer.innerHTML = values.map(value => renderList(products, value)).join("");
                 }
             }
-
             if (values.length == 0) {
                 productContainer.innerHTML = productList.populateProductList(products);
             }
-
             let productCards = productContainer.querySelectorAll('.product');
             productCards.forEach(item => new CardProduct(item));
-        })
+
+        }) 
     })
 }
 
-let shoppingCart = new Cart();
 
-const cartAmount = document.getElementById('cart-amount');
-cartAmount.textContent = shoppingCart.totalAmount();
+let shoppingCart =  new Cart();
+
+let cartAmount = document.getElementById('cart-amount');
+
+cartAmount = shoppingCart.totalAmount();
 
 async function fetchData(url) {
     return await fetch(url, {
@@ -525,26 +541,27 @@ async function fetchData(url) {
     .then(response => {
         if(response.status >= 400) {
             return response.json().then(err => {
-                const error = new Error('Something went wrong!')
-                error.data = err
-                throw error
+                const error = new Error('Something went wrong!');
+                error.data = err;
+                throw error;
             })
         }
         return response.json()
     })
 }
 
+
 function main() {
 
-    const url = "https://my-json-server.typicode.com/TooMuchSoulless/db";
+    const url = "https://my-json-server.typicode.com/NataliaStepaniuk/stena-db";
+
     const productContainer = document.querySelector('.product-container');
 
     if (productContainer) {
         fetchData(`${url}/products`)
         .then(products => {
             let productList = new ProductList(products);
-
-            productContainer.innerHTML = productList.populateProductList(products);
+            productContainer.innerHTML = productList.populateProductList(products);	
 
             let productCards = productContainer.querySelectorAll('.product');
 
@@ -557,10 +574,12 @@ function main() {
 
                 fetchData(`${url}/categories`)
                 .then(categories => {
-                    populateCategories(categoryContainer, categories);
 
-                    renderCategory(productContainer, '#category-container', products)
-                })
+               
+                populateCategories(categoryContainer, categories);
+
+                renderCategory(productContainer, '#category-container', products)
+              })
             }
 
             const selectPicker = document.getElementById('selectpicker');
@@ -568,7 +587,7 @@ function main() {
                 renderSelect(selectPicker, products, productContainer);
             }
 
-            const showOnly = document.querySelector(".show-only");
+            const showOnly = document.querySelector('.show-only');
             if(showOnly) {
                 renderShowOnly(showOnly, products, productContainer);
             }
@@ -577,73 +596,77 @@ function main() {
 
     const cartPage = document.getElementById('cart-page');
     if(cartPage) {
-        const shoppingCartItems = cartPage.querySelector('.cart-main .table');
+        const shippingCartItems = cartPage.querySelector('.cart-main .table');
+        shippingCartItems.innerHTML = shoppingCart.populateShoppingCart(products);
+        shoppingCart.renderCart(shippingCartItems)
 
-        fetchData(`${url}/products`)
-        .then (products => {
-            shoppingCartItems.innerHTML = shoppingCart.populateShoppingCart(products);
-            
-            shoppingCart.renderCart(shoppingCartItems);
-        
-            let isAuth = auth => auth ?? false;
+        // shoppingCart.setCartTotal(shippingCartItems);
 
-            class AuthException extends Error {
-                constructor(code, message) {
-                    const fullMessage = message ? `${code}: ${message}` : code;
-                    super(fullMessage);
-                    this.name = code;
-                    this.code = code;
-                    this.message = fullMessage;
-                }
+        let isAuth = auth => auth ?? false;
 
-                toString() {
-                    return this.message;
-                }
+        class AuthException extends Error {
+            constructor(code, message) {
+                const fullMessage = message ? `${code}: ${message}` : code;
+                super(fullMessage) ;
+                this.name = code;
+                this.code = code;
+                this.message = fullMessage;
             }
 
-            const msgBoxId = document.getElementById('dialogBox');
-            
-            function showDialog(err) {
-                msgBoxId.querySelector('.message').textContent = err;
-                msgBoxId.showModal();
+            toString() {
+                return this.message;
             }
+        }
 
-            const checkoutButton = document.querySelector('.checkout');
 
-            const closeButton = document.querySelector('.close');
+        const msgBoxId = document.getElementById('dialogBox');
 
-            checkoutButton.addEventListener('click', () => {
-                try {
-                    if(!isAuth()) {
-                        throw new AuthException("FORBIDDEN" , "You don't have access to this page.")
-                    } else {
-                        window.open("checkout.html");
-                    }
+        function showDialog(e) {
+            msgBoxId.querySelector('.message').textContent = e;
+            msgBoxId.showModal();
+        }
 
-                } catch(err) {
-                    console.error(err)
-                    console.error(err.toString())
-                    showDialog(err.toString())
-                    closeButton.addEventListener('click', () => {
-                        msgBoxId.close();
-                    })
+
+        const checkoutButton = document.querySelector('.checkout');
+
+
+        checkoutButton.addEventListener('click', () => {
+            try{
+                console.log(isAuth)
+                if(!isAuth()) {
+                    // 
+                    // throw new Error("Error")
+                    throw new AuthException("FORBIDDEN" , "You don`t have access to this page.");
+                } else {
+                    window.open("/checkout.html");
                 }
-            })
-        });
+              
+
+            }catch(e){
+                console.error(e)
+                console.error(e.toString())
+                showDialog(e.toString())
+                const closeButton = msgBoxId.querySelector('.close');
+                console.log("closeButton ", closeButton)
+                closeButton.addEventListener('click', () => {
+                    msgBoxId.close();
+                })
+            }
+        })
+
+
     }
 
     const checkoutPage = document.getElementById('checkout-page');
     if (checkoutPage) {
         const checkoutForm = checkoutPage.getElementById('checkout-form');
         const errorMessages = document.getElementById('errorMessages');
-
         function displayError(message) {
             errorMessages.innerHTML += `<div class="error">${message}</div>`;
         }
 
         function isValidEmail(email) {
-            return /^[^\s!#$%&'*+/=?^`{|}~-]+@[^\s@\d]+\.[^\s@!#$%&'*+/=?^`{|}~\d]+$/.test(email);
-            /*/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);*/
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
         checkoutForm.addEventListener('submit', function (event) {
@@ -656,9 +679,8 @@ function main() {
                 displayError('Name field is required.')
                 return;
             }
-
             if (!address1.value.trim() || !address2.value.trim()) {
-                displayError('Address 1 or Address 2 field is required.')
+                displayError('Address 1 or Address 2 fields is required.')
                 return;
             }
 
@@ -666,18 +688,20 @@ function main() {
                 displayError('City field is required.')
                 return;
             }
-
             if (!zipcode.value.trim()) {
-                displayError('City postcode field is required.')
+                displayError('City postal code is required.')
                 return;
             }
-            
+
             if (!email.value.trim() || !isValidEmail(email.value)) {
                 displayError('Please enter a valid email address.')
                 return;
             }
+
         })
+
     }
+
 
 }
 
@@ -685,59 +709,68 @@ const template = document.createElement('template');
 
 template.innerHTML = `
 <footer class="mb-3">
-    <div class="container page-footer">
-        <section class="footer-main">
-            <div class="footer-main-item">
-                <h2 class="footer-title">About</h2>
-                <ul>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Customers</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-main-item">
-                <h2 class="footer-title">Resources</h2>
-                <ul>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">eBooks</a></li>
-                    <li><a href="#">Webinars</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-main-item">
-                <h2 class="footer-title">Contact</h2>
-                <ul>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Sales</a></li>
-                    <li><a href="#">Advertise</a></li>
-                </ul>
-            </div>
+      <div class="container page-footer">
+          <section class="footer-main">
+              <div class="footer-main-item">
+                  <h3 class="footer-title">Покупцю</h3>
+                  <ul>
+                    <li><a href="">Послуги</a></li>
+                    <li><a href="">Ціни</a></li>
+                    <li><a href="">Доставка та оплата</a></li>
+                    <li><a href="">Відгуки</a></li>
+                    <li><a href="./exercises/index.html">Exercises</a></li>
+              </div>
+              <div class="footer-main-item">
+                  <h3 class="footer-title">Сервіс</h3>
+                  <ul>
+                    <li><a href="">Сезонні пропозиції</a></li>
+                    <li><a href="">Бонусний рахунок</a></li>
+                    <li><a href="">Подарункові сертифікати</a></li>
+                    <li><a href="">Обмін</a></li>
+                  </ul>
+              </div>
+              <div class="footer-main-item">
+                  <h3 class="footer-title">Допомога</h3>
+                  <ul>
+                    <li><a href="">Гарантія</a></li>
+                    <li><a href="">Кредити</a></li>
+                    <li><a href="">Сервісні центри</a></li>
+                    <li><a href="">Повернення товару</a></li>
+                  </ul>
+              </div>
+          </section>
+        <section class="footer-social">
+          <ul class="footer-social-list">
+            <li>
+              <a href=""><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
         </section>
 
-        <section class="footer-social py-3">
-            <ul class="footer-social-list-unstyled">
-                <li><a href="https://www.facebook.com/facebookIndia"><i class="fab fa-facebook social-media"></i></a></li>
-                <li><a href="https://twitter.com/X"><i class="fab fa-twitter social-media"></i></a></li>
-                <li><a href="https://www.instagram.com/instagram/?hl=uk"><i class="fab fa-instagram social-media"></i></a></li>
-                <li><a href="https://github.com/TooMuchSoulless/TooMuchSoulless.github.io"><i class="fab fa-github social-media"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/linkedin/"><i class="fab fa-linkedin social-media"></i></a></li>
-                <li><a href="https://www.youtube.com/@LofiGirl"><i class="fab fa-youtube social-media"></i></a></li>
-            </ul>
+        <section class="footer-ligal">
+          <ul class="footer-ligal-list">
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">&copy; 2024 Copyright SteNa Inc.</a></li>
+          </ul>
         </section>
-
-        <section class="footer-legal">
-            <ul class="footer-legal-list">
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#"> &copy; 2024 Copyright Shopaholic Inc.</a></li>
-            </ul>
-        </section>
-    </div>
-</footer>
+      </div>
+    </footer>
 `;
 
 let clone = template.content.cloneNode(true);
