@@ -14,9 +14,11 @@
     <title>Site</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header mb-3">
       <!-- brand -->
       <a href="/index.html" class="brand">SteNa</a>
+      <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
+      <input type="checkbox" id="toggler" />
       <!-- navigation -->
       <nav class="navbar">
         <a href="./index.html">Головна</a>
@@ -27,7 +29,7 @@
       </nav>
       <nav class="toolbar">
         <a href="#" class="far fa-heart"></a>
-        <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+        <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
         <a href="#" class="far fa-user"></a>
       </nav>
     </header>
@@ -77,69 +79,8 @@
           <div class="contact-sidebar">Sidebar</div>
       </div>
   </section>>
-    <!--footer-->
-    <footer class="mb-3">
-      <div class="container page-footer">
-          <section class="footer-main">
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Покупцю</h3>
-                  <ul>
-                    <li><a href="">Послуги</a></li>
-                    <li><a href="">Ціни</a></li>
-                    <li><a href="">Доставка та оплата</a></li>
-                    <li><a href="">Відгуки</a></li>
-                    <li><a href="./exercises/index.html">Exercises</a></li>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Сервіс</h3>
-                  <ul>
-                    <li><a href="">Сезонні пропозиції</a></li>
-                    <li><a href="">Бонусний рахунок</a></li>
-                    <li><a href="">Подарункові сертифікати</a></li>
-                    <li><a href="">Обмін</a></li>
-                  </ul>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Допомога</h3>
-                  <ul>
-                    <li><a href="">Гарантія</a></li>
-                    <li><a href="">Кредити</a></li>
-                    <li><a href="">Сервісні центри</a></li>
-                    <li><a href="">Повернення товару</a></li>
-                  </ul>
-              </div>
-          </section>
-        <section class="footer-social">
-          <ul class="footer-social-list">
-            <li>
-              <a href=""><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-github"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-youtube"></i></a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="footer-ligal">
-          <ul class="footer-ligal-list">
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">&copy; 2024 Copyright SteNa Inc.</a></li>
-          </ul>
-        </section>
-      </div>
-    </footer>
+   
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

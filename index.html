@@ -77,7 +77,9 @@
       </nav>
       <nav class="toolbar">
         <a href="#" class="far fa-heart"></a>
-        <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+        <a href="/cart.html" class="fas fa-dolly-flatbed"
+          >(<span id="cart-amount">0</span>)</a
+        >
         <a href="#" class="far fa-user"></a>
       </nav>
     </header>
@@ -92,8 +94,9 @@
     <section class="py-5">
       <div class="container">
         <header class="text-center">
-          <p class="text-uppercase mb-1">Будь щасливою</p>
-          <h2>Вибирай найкраще</h2>
+          <h3 class="text-uppercase mb-1">Індивідуальне пошиття</h3>
+          <h2 class="mb-3">Ваш стиль - наша робота</h2>
+          <p class="mb-4">Ми пропонуємо вам пошиття одягу за вашими мірками</p>
         </header>
         <div class="carousel">
           <div class="slider">
@@ -265,8 +268,7 @@
           <h2><span>Популярні новинки</span></h2>
         </header>
 
-        <div class="product-container">
-        </div>
+        <div class="product-container"></div>
       </div>
     </main>
     <!-- divider-->
@@ -285,8 +287,7 @@
             <use xlink:href="#delivery-time"></use>
           </svg>
           <div class="text-start">
-            <h3>Free shipping</h3>
-            <p>Free shipping worldwild</p>
+            <h3>Безкоштовна доставка</h3>
           </div>
         </div>
         <div class="svg-icon d-inline-block">
@@ -294,8 +295,7 @@
             <use xlink:href="#helpline-24h"></use>
           </svg>
           <div class="text-start">
-            <h3>Free shipping</h3>
-            <p>Free shipping worldwild</p>
+            <h3>Зв'язок 24/7</h3>
           </div>
         </div>
         <div class="svg-icon d-inline-block">
@@ -303,30 +303,19 @@
             <use xlink:href="#label-tag"></use>
           </svg>
           <div class="text-start">
-            <h3>Free shipping</h3>
-            <p>Free shipping worldwild</p>
+            <h3>Акції.Знижки</h3>
           </div>
         </div>
       </div>
     </section>
-    <hr>
+    <hr />
 
     <dialog id="details">
       <a href="#!" title="Close" class="close fas fa-times"></a>
-      <div class="detail-container">
-        <div class="col-left">
-          <img src="/images/product-5.jpg" />
-        </div>
-
-        <div class="col-right">
-          <h2>Product Name</h2>
-        </div>
-      </div> 
+      <span class="dialog-main"></span>
     </dialog>
-    
+
     <script src="/js/db.json"></script>
     <script src="/js/app.js"></script>
-
-    
   </body>
 </html>

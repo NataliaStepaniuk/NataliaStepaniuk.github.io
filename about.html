@@ -14,9 +14,11 @@
     <title>Site</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header mb-3">
       <!-- brand -->
       <a href="/index.html" class="brand">SteNa</a>
+      <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
+      <input type="checkbox" id="toggler" />
       <!-- navigation -->
       <nav class="navbar">
         <a href="./index.html">Головна</a>
@@ -27,7 +29,7 @@
       </nav>
       <nav class="toolbar">
         <a href="#" class="far fa-heart"></a>
-        <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+        <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
         <a href="#" class="far fa-user"></a>
       </nav>
     </header>
@@ -42,70 +44,37 @@
         </div>
       </div>
     </section>
-   
-    <footer class="mb-3">
-      <div class="container page-footer">
-          <section class="footer-main">
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Покупцю</h3>
-                  <ul>
-                    <li><a href="">Послуги</a></li>
-                    <li><a href="">Ціни</a></li>
-                    <li><a href="">Доставка та оплата</a></li>
-                    <li><a href="">Відгуки</a></li>
-                    <li><a href="./exercises/index.html">Exercises</a></li>
-                  </ul>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Сервіс</h3>
-                  <ul>
-                    <li><a href="">Сезонні пропозиції</a></li>
-                    <li><a href="">Бонусний рахунок</a></li>
-                    <li><a href="">Подарункові сертифікати</a></li>
-                    <li><a href="">Обмін</a></li>
-                  </ul>
-              </div>
-              <div class="footer-main-item">
-                  <h3 class="footer-title">Допомога</h3>
-                  <ul>
-                    <li><a href="">Гарантія</a></li>
-                    <li><a href="">Кредити</a></li>
-                    <li><a href="">Сервісні центри</a></li>
-                    <li><a href="">Повернення товару</a></li>
-                  </ul>
-              </div>
-          </section>
-        <section class="footer-social py-3">
-          <ul class="footer-social-list">
-            <li>
-              <a href=""><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-github"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-youtube"></i></a>
-            </li>
-          </ul>
-        </section>
+    <section id="about-us">
+      <h2>Наша історія</h2>
 
-        <section class="footer-ligal">
-          <ul class="footer-ligal-list">
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">&copy; 2024 Copyright SteNa Inc.</a></li>
-          </ul>
-        </section>
-      </div>
-    </footer>
+      <p>
+        SteNa - це інтернет-магазин жіночого одягу, створений для сучасних, впевнених у собі жінок, які цінують стиль, 
+        комфорт та якість. Ми пропонуємо широкий асортимент одягу на будь-який смак та випадок: від елегантних суконь та 
+        костюмів до повсякденних джинсів та футболок.
+      </p>
+  
+      <h3>Наша місія:</h3>
+  
+      <ul>
+        <li>Допомогти кожній жінці знайти свій неповторний стиль та підкреслити свою красу.</li>
+        <li>Запропонувати широкий вибір якісного одягу за доступними цінами.</li>
+        <li>Створити приємний та зручний онлайн-шопінг.</li>
+      </ul>
+  
+      <h3>Чому обирати SteNa?</h3>
+
+       <p>Широкий асортимент: У нас ви знайдете одяг на будь-який смак та випадок.
+        Якість: Ми співпрацюємо з надійними виробниками та ретельно відбираємо кожен товар.
+        Доступні ціни: Ми пропонуємо конкурентні ціни на весь наш асортимент.
+        Зручний онлайн-шопінг: Наш сайт має простий та зрозумілий інтерфейс, зручну систему пошуку та фільтрів.
+        Швидка доставка: Ми пропонуємо швидку та надійну доставку по всій Україні.
+        Відмінний сервіс: Ми завжди раді допомогти вам з вибором одягу та відповісти на ваші запитання.
+        SteNa - це не просто інтернет-магазин, це ваш особистий стиліст, який допоможе вам завжди виглядати на мільйон!</p> 
+        
+    </section>
+    
+
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

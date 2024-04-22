@@ -15,9 +15,11 @@
   </head>
   <body>
     <!-- page header-->
-    <header class="page-header">
+    <header class="page-header mb-3">
       <!-- brand -->
       <a href="/index.html" class="brand">SteNa</a>
+      <label for="toggler">&nbsp;<i class="fas fa-bars"></i>&nbsp;</label>
+      <input type="checkbox" id="toggler" />
       <!-- navigation -->
       <nav class="navbar">
         <a href="./index.html">Головна</a>
@@ -28,7 +30,7 @@
       </nav>
       <nav class="toolbar">
         <a href="#" class="far fa-heart"></a>
-        <a href="/cart.html" class="fas fa-dolly-flatbed"></a>
+        <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
         <a href="#" class="far fa-user"></a>
       </nav>
     </header>
@@ -51,12 +53,12 @@
           <div class="sidebar-wrapper">
 
               <header>
-                  <h2 class="text-uppercase">Categories</h2>
+                  <h2 class="text-uppercase">Категорії</h2>
               </header>
 
               <span id="category-container"></span>
 
-              <h2 class="text-uppercase mb-4">Show only</h2>
+              <h2 class="text-uppercase mb-4">Показати</h2>
 
               <span class="show-only"></span>
 
@@ -70,7 +72,7 @@
 
               <header class="header">
 
-                  <h2 class="text-center">Our <span>Products</span></h2>
+                  <h2 class="text-center">Наша <span>продукція</span></h2>
 
               </header>
 
@@ -78,7 +80,7 @@
                   
                   <div class="col mb-2 mb-lg-0">
 
-                      <p class="text-sm text-muted mb-0">Showing 1–12 of 53 results</p>
+                      <p class="text-sm text-muted mb-0">Показати 1–12 of 53 результат</p>
 
                   </div>
 
@@ -100,7 +102,6 @@
 
     <script src="/js/db.js"></script>
     <script src="/js/app.js"></script>
-    <!-- page footer -->
     
     <dialog id="details">
         <a href="#!" title="Close" class="close fas fa-times"></a>
