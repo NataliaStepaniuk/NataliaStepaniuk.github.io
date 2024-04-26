@@ -454,23 +454,23 @@ function renderSelect(selectPicker, products, productContainer) {
   selectPicker.addEventListener("change", function () {
     switch (this.value) {
       case "low-high":
-        productContainer.innerHTML = productList.populateProductList(
+        productContainer.innerHTML = ProductList.populateProductList(
           products.sort(compare("price", "asc"))
         );
         break;
       case "high-low":
-        productContainer.innerHTML = productList.populateProductList(
+        productContainer.innerHTML = ProductList.populateProductList(
           products.sort(compare("price", "desc"))
         );
         break;
       case "popularity":
-        productContainer.innerHTML = productList.populateProductList(
+        productContainer.innerHTML = ProductList.populateProductList(
           products.sort(compare("stars", "desc"))
         );
         break;
 
       default:
-        productContainer.innerHTML = productList.populateProductList(
+        productContainer.innerHTML = ProductList.populateProductList(
           products.sort(compare("id", "asc"))
         );
     }
@@ -542,7 +542,7 @@ const renderShowOnly = (showOnly, products, productContainer) => {
         }
       }
       if (values.length == 0) {
-        productContainer.innerHTML = productList.populateProductList(products);
+        productContainer.innerHTML = ProductList.populateProductList(products);
       }
       let productCards = productContainer.querySelectorAll(".product");
       productCards.forEach((item) => new CardProduct(item));
