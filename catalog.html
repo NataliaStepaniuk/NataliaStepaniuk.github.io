@@ -29,7 +29,7 @@
         <a href="./contact.html">Контакти</a>
       </nav>
       <nav class="toolbar">
-        <a href="/blog.html" class="far fa-heart"></a>
+     
         <a href="/cart.html" class="fas fa-dolly-flatbed">(<span id="cart-amount">0</span>)</a>
         <a href="/contact.html" class="far fa-user"></a>
       </nav>
@@ -58,10 +58,7 @@
 
               <span id="category-container"></span>
 
-              <h2 class="text-uppercase mb-4">Показати</h2>
-
-              <span class="show-only"></span>
-
+              
           </div>
 
       </aside>
@@ -78,12 +75,7 @@
 
               <div class="row mb-3 align-items-center">
                   
-                  <div class="col mb-2 mb-lg-0">
-
-                      <p class="text-sm text-muted mb-0">Показати 1–12 of 53 результат</p>
-
-                  </div>
-
+                
                   <div class="col">
                       
                       <select id="selectpicker" class="form-select form-select-lg mb-2 text-sm text-muted" name="sorting" data-width="200" data-title="Default sorting"></select>
@@ -100,14 +92,16 @@
 
   </section>
 
+  <dialog id="details">
+    <a href="#!" title="Close" class="close fas fa-times"></a>
+    <span class="dialog-main"></span>
+    
+      
+  </dialog>
+
     <script src="/js/db.js"></script>
     <script src="/js/app.js"></script>
     
-    <dialog id="details">
-        <a href="#!" title="Close" class="close fas fa-times"></a>
-        <span class="dialog-main"></span>
-        
-          
-      </dialog>
+   
   </body>
 </html>

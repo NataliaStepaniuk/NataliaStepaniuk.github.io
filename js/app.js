@@ -53,14 +53,14 @@ function CardProduct(productList, item) {
             <div class="info-container">
                 <h2 class="info-header">${item.name}</h2>
 
-                <div class="info-price">Price: <span class="price">${item.price}</span></div>
-                <div class="info-shipping">Free shipping</div>
+                <div class="info-price">Ціна <span class="price">${item.price}</span></div>
+                <div class="info-shipping">Купити</div>
                 
                 <div class="info-button to-cart" data-id="${item.id}">
-                    <a href="#!" class="btn btn-submit add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</a>
+                    <a href="#!" class="btn btn-submit add-to-cart"><i class="fas fa-cart-plus"></i> Додати до кошика</a>
                 </div>
 
-                <h2 class="qty-header py-2">Amount:</h2>     
+                <h2 class="qty-header py-2">Кількість</h2>     
                     
                 <div class="qty qty-buttons">
                     <div class="number-input quantity" data-id="${item.id}">
@@ -76,10 +76,8 @@ function CardProduct(productList, item) {
                     </div>
                 </div>
 
-                <div class="info-description">${item.description}</div>
-                <div class="info-link">
-                <a class="btn-link far fa-heart add-to-wishlist" href="#!" data-id="${item.id}">&nbsp;Add to wish list</a>
-                </div>
+                
+                
             </div>    
         
         </div>
@@ -347,7 +345,6 @@ function ProductList(products) {
         <article class="product" data-id="${product.id}">
             <div class="icons">
                 <a href="#!" class="fas fa-shopping-cart add-to-cart"></a>
-                <a href="#!" class="fas fa-heart add-to-wishlist"></a>
                 <a href="#!" class="fas fa-eye show-details"></a>
             </div>
             <div class="image">
@@ -482,6 +479,7 @@ function renderSelect(selectPicker, products, productContainer) {
   });
 }
 
+
 function Store() {
   this.init = function (key) {
     if (!this.isset(key)) {
@@ -604,11 +602,6 @@ function main() {
       if (selectPicker) {
         renderSelect(selectPicker, products, productContainer);
       }
-
-      const showOnly = document.querySelector(".show-only");
-      if (showOnly) {
-        renderShowOnly(showOnly, products, productContainer);
-      }
     });
   }
 
@@ -678,7 +671,7 @@ function main() {
         console.error(e);
         console.error(e.toString());
         showDialog(e.toString());
-        const closeButton = msgBoxId.querySelector(".close");
+        const closeButton = msgBoxId.querySelector("button.close");
         console.log("closeButton ", closeButton);
         closeButton.addEventListener("click", () => {
           msgBoxId.close();
@@ -689,7 +682,7 @@ function main() {
 
   const checkoutPage = document.getElementById("checkout-page");
   if (checkoutPage) {
-    const checkoutForm = checkoutPage.getElementById("checkout-form");
+    const checkoutForm = document.getElementById("checkout-form");
     const errorMessages = document.getElementById("errorMessages");
     function displayError(message) {
       errorMessages.innerHTML += `<div class="error">${message}</div>`;
@@ -703,7 +696,7 @@ function main() {
       event.preventDefault();
 
       const { name, email, address1, address2, city, zipcode } =
-        checkoutForm.elements;
+        checkoutForm.Form;
 
       errorMessages.innerHTML = "";
       if (!name.value.trim()) {
@@ -752,8 +745,6 @@ blogPosts.forEach((post) => {
 
   toggleButton.addEventListener("click", toggleArticle);
 });
-
-
 
 const template = document.createElement("template");
 

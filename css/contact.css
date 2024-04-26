@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
-  background-color: #b2bef3;
+  background-color: #d9cbfd;
 }
 
 .contact-main,
@@ -36,11 +36,11 @@
 }
 
 .form-control:focus {
-  border-bottom: 2px solid #a0cdf1;
+  border-bottom: 2px solid rgb(196, 183, 228);
 }
 
 .form-control::placeholder {
-  color: #aaa;
+  color: #f8f6f6;
 }
 
 .input-group {
@@ -64,8 +64,8 @@
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #349df3;
-  color: #fff;
+  background-color:rgb(162, 152, 190);
+  color: #050505;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -73,7 +73,14 @@
 }
 
 .btn:hover {
-  background-color: #a5caf0;
+  background-color: rgb(116, 106, 143);
+}
+.btn:active {
+  color: #050505;
+}
+.btn:hover,
+.btn:focus {
+  color: #050505;
 }
 
 .contact-sidebar {
@@ -106,6 +113,7 @@
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
+  
 }
 
 .contact-sidebar a:hover {
@@ -119,7 +127,7 @@
   padding: 2em;
   margin-bottom: 2em;
 }
-.footer {
+.contact-footer {
   background-color: #333;
   color: #fff;
   padding: 20px;

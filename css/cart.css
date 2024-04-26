@@ -13,8 +13,8 @@
 
     & .header {
         font-weight: 600;
-        color: white;
-        background-color: rgb(147, 107, 137);
+        color: rgb(49, 48, 48);
+        background-color:  rgb(213, 198, 250);
     }
 
     .table {
